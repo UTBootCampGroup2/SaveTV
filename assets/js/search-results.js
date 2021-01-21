@@ -1,11 +1,31 @@
 // global variables
 var searchShowEl = document.querySelector("#search-show");
+var searchInputEl = document.querySelector('#findlocate');
+var searchFormEl = document.querySelector('.hero-search-filter-form');
 
 // create search result container
 var resultContainerEl = document.createElement('div');
 resultContainerEl.classList = 'result-container';
 resultContainerEl.setAttribute('id', 'result-container');
 searchShowEl.appendChild(resultContainerEl);
+
+// Function for submiting search
+var searchSubmitHandler = function(event) {
+    // prevent page from refreshing
+    event.preventDefault();
+  
+    // get value from input element
+    var seriesName = searchInputEl.value.trim();
+  
+    if (seriesName) {
+      getSeries(seriesName);
+  
+      // clear old content
+      searchInputEl.value = '';
+    } else {
+      alert('Please enter a TV show');
+    }
+};
 
 // Function for searching the series name entered in the input form element
 var getSeries = function(seriesName) {
@@ -91,6 +111,7 @@ var displaySeriesdata = function(series) {
     saveButtonEl.className = 'save-button';
     saveButtonEl.setAttribute('id', 'save-button');
     saveButtonEl.setAttribute('type', 'button');
+    saveButtonEl.innerHTML = "<i class='fa fa-search'></i>"
     saveButtonEl.textContent = "Save";
     seriesDataEl.appendChild(saveButtonEl);
   
@@ -124,7 +145,7 @@ var seriesRating = function(id) {
         }
     })
     .catch(function(error) {
-        alert('Unable to connect to GitHub');
+        alert('Unable to connect');
     });
 };
 
@@ -155,6 +176,7 @@ var displayRating = function(rating) {
   
 };
 
-//call search
-getSeries('yellowstone');
+// add event listener for search
+searchFormEl.addEventListener('submit', searchSubmitHandler);
+
 
