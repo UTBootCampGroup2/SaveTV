@@ -1,0 +1,34 @@
+.hero-search-filter-content {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  
+.hero-search-filter-form {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 70%;
+    background: #fefefe;
+    padding: 0.25rem;
+    border-radius: 5px;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+.hero-search-filter-form input,
+.hero-search-filter-form .button {
+    margin-bottom: 0;
+  }
+
