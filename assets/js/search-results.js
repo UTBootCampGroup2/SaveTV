@@ -76,10 +76,7 @@ var displaySeriesdata = function(series) {
     saveButtonEl.textContent = "Save";
     seriesDataEl.appendChild(saveButtonEl);
   
-    // get id
-    //console.log(series.externals.imdb);
-    //seriesRating(series.externals.imdb);
-  
+    
     // display website
     //console.log(series.officialSite);
     var siteEl = document.createElement('a');
@@ -92,9 +89,33 @@ var displaySeriesdata = function(series) {
     var summaryEl = document.createElement('div');
     summaryEl.innerHTML = series.summary;
     resultContainerEl.appendChild(summaryEl);
+
+    // call function to get rating
+    seriesRating(series.externals.imdb);
   };
 
 // Function for getting rating
+var seriesRating = function(id) {
+
+    var apiUrl = "http://www.omdbapi.com/?i=" + id + "&apikey=8f19b7dc";
+
+    fetch(apiUrl)
+    .then(function(response) {
+        // request was successful
+        if (response.ok) {
+        console.log(response);
+        response.json().then(function(data) {
+            console.log(data);
+            //displayRating(data);
+        });
+        } else {
+        alert('Error: ' + response.statusText);
+        }
+    })
+    .catch(function(error) {
+        alert('Unable to connect to GitHub');
+    });
+};
 
 // Function to display rating
 
