@@ -1,3 +1,4 @@
+// ************************ From Rose ************************//
 // global variables
 var searchShowEl = document.querySelector("#search-show");
 var searchInputEl = document.querySelector('#findlocate');
@@ -13,11 +14,12 @@ searchShowEl.appendChild(resultContainerEl);
 var searchSubmitHandler = function(event) {
     // prevent page from refreshing
     event.preventDefault();
-  
+    console.log(event);
     // get value from input element
     var seriesName = searchInputEl.value.trim();
-  
+    
     if (seriesName) {
+      console.log(seriesName);
       getSeries(seriesName);
   
       // clear old content
@@ -29,16 +31,17 @@ var searchSubmitHandler = function(event) {
 
 // Function for searching the series name entered in the input form element
 var getSeries = function(seriesName) {
-
-    var apiUrl = "http://api.tvmaze.com/singlesearch/shows?q=" + seriesName;
-  
+ 
+    var apiUrl = "http://api.tvmaze.com/singlesearch/shows?q=" + seriesName; // From Rose
     fetch(apiUrl)
     .then(function(response) {
       // request was successful
+      
       if (response.ok) {
         //console.log(response);
         response.json().then(function(data) {
-          //console.log(data);
+          console.log("In getSeries: ");
+          console.log(data);
           displaySeriesdata(data);
         });
       } else {
@@ -50,10 +53,12 @@ var getSeries = function(seriesName) {
     });
   
 };
+
 // Function for displaying the serached series information
 var displaySeriesdata = function(series) {
   
-
+  // console.log(series);
+  if(series != null){
     // create section for holding series data
     var seriesDataEl = document.createElement('div');
     seriesDataEl.className = 'series-data';
@@ -61,13 +66,17 @@ var displaySeriesdata = function(series) {
     resultContainerEl.appendChild(seriesDataEl);
 
     // display Image
-    console.log(series.image.medium);
-    var imageEl = document.createElement('img');
-    imageEl.className = ('search-image')
-    imageEl.setAttribute("id", 'search-image');
-    imageEl.setAttribute("src", series.image.medium);
-    seriesDataEl.appendChild(imageEl);
-  
+    if(series.image != null && series.image.medium != null){
+      console.log("series.image.medium");
+      console.log(series.image.medium);
+      var imageEl = document.createElement('img');
+      imageEl.className = ('search-image')
+      imageEl.setAttribute("id", 'search-image');
+      imageEl.setAttribute("src", series.image.medium);
+      seriesDataEl.appendChild(imageEl);
+    }
+    
+
     // display name of the series
     console.log(series.name);
     var nameEl = document.createElement('p');
@@ -85,16 +94,16 @@ var displaySeriesdata = function(series) {
     websiteEl.setAttribute("href", series.officialSite);
     websiteEl.setAttribute("target", '_blank');
     seriesDataEl.appendChild(websiteEl);
-    
+
     // display status or schedule
     if(series.status != 'Ended') {
       //console.log(series.schedule.time + series.schedule.days);
-  
+
       var scheduleEl = document.createElement('p');
       scheduleEl.className = ('search-schedule')
       scheduleEl.setAttribute("id", 'search-schedule');
       scheduleEl.textContent = series.schedule.time + " "+ series.schedule.days;
-     
+    
       seriesDataEl.appendChild(scheduleEl);
     }
     else {
@@ -105,7 +114,7 @@ var displaySeriesdata = function(series) {
       statusEl.textContent = "Status: " + series.status;
       seriesDataEl.appendChild(statusEl);
     }
-  
+
     // add save button
     var saveButtonEl = document.createElement('button');
     saveButtonEl.className = 'save-button';
@@ -114,7 +123,7 @@ var displaySeriesdata = function(series) {
     saveButtonEl.innerHTML = "<i class='fa fa-search'></i>"
     saveButtonEl.textContent = "Save";
     seriesDataEl.appendChild(saveButtonEl);
-  
+
     // display summary
     var summaryEl = document.createElement('div');
     summaryEl.className = 'search-summary';
@@ -124,7 +133,12 @@ var displaySeriesdata = function(series) {
 
     // call function to get rating
     seriesRating(series.externals.imdb);
-  };
+  }
+  else{
+    console.log("displaySeriesdata input is null");
+  }
+    
+};
 
 // Function for getting rating
 var seriesRating = function(id) {
@@ -178,5 +192,3 @@ var displayRating = function(rating) {
 
 // add event listener for search
 searchFormEl.addEventListener('submit', searchSubmitHandler);
-
-
