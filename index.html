@@ -12,9 +12,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.css">
     <!--  FONT AWESOME -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
+    
    
   </head>
   <body>
+    
     
     <!-- START NAVIGATION -->
     <div class="title-bar" data-responsive-toggle="mainNavigation" data-hide-for="medium">
@@ -23,6 +26,7 @@
         <div class="title-bar-title">Menu</div>
       </div>
       <div class="title-bar-right">
+        <img class="logo2" src="./assets/images/logo-icon.jpg" alt="">
         SaveTv
       </div>
     </div>
@@ -30,7 +34,8 @@
     <div class="top-bar" id="mainNavigation">
       <div class="top-bar-left">
         <ul class="menu vertical medium-horizontal">
-          <li class="menu-text hide-for-small-only">SaveTv</li>
+          <li class="hide-for-small-only logo"><img src="./assets/images/logo.gif" alt=""></li>
+          <li class="hide-for-small-only">SaveTV</li>
         </ul>
       </div>
       <div class="top-bar-right">
@@ -43,25 +48,26 @@
     </div>
     <!-- END NAVIGATON -->
     
+    <!-- CAROUSEL -->
     <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
       <ul class="orbit-container">
         <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
         <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
         <li class="is-active orbit-slide">
-          <img class="orbit-image" src="https://placehold.it/2000x750&text=1st" alt="Space">
-          <figcaption class="orbit-caption">first pic</figcaption>
+          <img class="orbit-image" src="./assets/images/one.jpg" alt="Space">
+          <figcaption class="orbit-caption">THE BIG BANG THEORY</figcaption>
         </li>
         <li class="orbit-slide">
-          <img class="orbit-image" src="https://placehold.it/2000x750&text=2nd" alt="Space">
-          <figcaption class="orbit-caption">second pic</figcaption>
+          <img class="orbit-image" src="./assets/images/six.jpg" alt="Space">
+          <figcaption class="orbit-caption">GREEN ARROW</figcaption>
         </li>
         <li class="orbit-slide">
-          <img class="orbit-image" src="https://placehold.it/2000x750&text=3nd" alt="Space">
-          <figcaption class="orbit-caption">third pic</figcaption>
+          <img class="orbit-image" src="./assets/images/three.jpg" alt="Space">
+          <figcaption class="orbit-caption">SALEM</figcaption>
         </li>
         <li class="orbit-slide">
-          <img class="orbit-image" src="https://placehold.it/2000x750&text=4nd" alt="Space">
-          <figcaption class="orbit-caption">fourth pic</figcaption>
+          <img class="orbit-image" src="./assets/images/two.jpg" alt="Space">
+          <figcaption class="orbit-caption">GOTHAM</figcaption>
         </li>
       </ul>
       <nav class="orbit-bullets">
@@ -177,6 +183,7 @@
       </div>
     </footer>
     
+
     <script src="./assets/js/search-results.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
