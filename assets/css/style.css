@@ -1,3 +1,4 @@
+/************************* From Ben *************************/
 .hero-search-filter-content {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -42,4 +43,313 @@
 
 .savetv {
     font-size: 50px;
+}
+
+
+/************************* From Brandon *************************/
+
+
+/* NAV BAR STARTS */
+.topbar-responsive {
+    background: #2c3840;
+    padding: 1rem 1.5rem;
+  }
+  
+  .topbar-responsive .topbar-responsive-logo {
+    color: #fefefe;
+    vertical-align: middle;
+  }
+  
+  .topbar-responsive .menu {
+    background: #2c3840;
+  }
+  
+  .topbar-responsive .menu li:last-of-type {
+    margin-right: 0;
+  }
+  
+  .topbar-responsive .menu a {
+    color: #fefefe;
+    transition: color 0.15s ease-in;
+  }
+  
+  .topbar-responsive .menu a:hover {
+    color: #c6d1d8;
+  }
+  
+  @media screen and (max-width: 39.9375em) {
+    .topbar-responsive .menu a {
+      padding: 0.875rem 0;
+    }
+  }
+  
+  .topbar-responsive .menu .topbar-responsive-button {
+    color: #fefefe;
+    border-color: #fefefe;
+    border-radius: 5000px;
+    transition: color 0.15s ease-in, border-color 0.15s ease-in;
+  }
+  
+  .topbar-responsive .menu .topbar-responsive-button:hover {
+    color: #c6d1d8;
+    border-color: #c6d1d8;
+  }
+  
+  @media screen and (max-width: 39.9375em) {
+    .topbar-responsive .menu .topbar-responsive-button {
+      width: 100%;
+      margin: 0.875rem 0;
+    }
+  }
+  
+  @media screen and (max-width: 39.9375em) {
+    .topbar-responsive {
+      padding: 0.75rem;
+    }
+    .topbar-responsive .top-bar-title {
+      position: relative;
+      width: 100%;
+    }
+    .topbar-responsive .top-bar-title span {
+      position: absolute;
+      right: 0;
+      border: 1px solid #fefefe;
+      border-radius: 5px;
+      padding: 0.25rem 0.45rem;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%);
+    }
+    .topbar-responsive .top-bar-title span .menu-icon {
+      margin-bottom: 4px;
+    }
+  }
+  
+  @-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @-webkit-keyframes slideDown {
+    0% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+    100% {
+      -webkit-transform: translateY(0%);
+              transform: translateY(0%);
+    }
+  }
+  
+  @keyframes slideDown {
+    0% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+    100% {
+      -webkit-transform: translateY(0%);
+              transform: translateY(0%);
+    }
+  }
+  
+  @media screen and (max-width: 39.9375em) {
+    .topbar-responsive-links {
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-duration: 0.5s;
+              animation-duration: 0.5s;
+      width: 100%;
+      -webkit-animation: fadeIn 1s ease-in;
+              animation: fadeIn 1s ease-in;
+    }
+  }
+  /* NAVBAR ENDS */
+  
+  /* HERO STARTS */
+
+.subnav-hero-section {
+    text-align: center;
+    background-image: url("https://static.pexels.com/photos/248064/pexels-photo-248064.jpeg");
+    background-size: cover;
+    position: relative;
+    overflow: visible;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 300px;
+  }
+  
+  .subnav-hero-section .subnav-hero-headline {
+    color: #fefefe;
+    text-shadow: 1px 1px 2px #0a0a0a;
+  }
+  
+  .subnav-hero-subnav {
+    float: none;
+    position: absolute;
+    text-align: center;
+    margin: 0 auto;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .subnav-hero-subnav li {
+    float: none;
+    display: inline-block;
+  }
+  
+  .subnav-hero-subnav li a {
+    padding: 0.9rem 1rem;
+    font-size: 0.75rem;
+    color: #fefefe;
+    text-transform: uppercase;
+    display: block;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.35s ease-in-out;
+    text-shadow: 1px 1px 2px #0a0a0a;
+  }
+  
+  .subnav-hero-subnav li a.is-active {
+    background: rgba(254, 254, 254, 0.15);
+    
+  }
+  
+  .subnav-hero-subnav li a:hover {
+    background: rgba(254, 254, 254, 0.15);
+  }
+  /* HERO ENDS */
+
+  /* DIVIDER STARTS */
+  .custom-2 {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  .custom-2 span {
+    display: inline-block;
+    position: relative;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  
+  .custom-2 span:before, .custom-2 span:after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 9999px;
+    top: 50%;
+    border-top-style: solid;
+    border-top-width: 4px;
+    border-top-color: #1779ba;
+    margin-top: -2px;
+  }
+  
+  .custom-2 span:before {
+    right: 100%;
+  }
+  
+  .custom-2 span:after {
+    left: 100%;
+  }
+  /* DIVIDER ENDS */
+
+  /* SEARCH BAR */
+  
+.input-group-rounded .input-group-field {
+    border-radius: 500px 0 0 500px;
+    padding-left: 1rem;
+  }
+  
+  .input-group-rounded .input-group-button .button {
+    border-radius: 0 500px 500px 0;
+    font-size: 0.8rem;
+  }
+  
+  .large {
+      height: 500px;
+      width: 900px;
+      align-items: center;
+  }
+  
+  /* IMAGE SIZING */
+  section  {
+    display: flex;
+    overflow-x: auto;
+  }
+
+  section img {
+    width:300px;
+    transition: 250ms all;
+  }
+
+  section img:hover{
+    margin-left: 0 40px;
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+ /* MODAL BOX */
+ .modal-box {
+  width: 80%;
+  height: 85%;
+  background: rgb(144, 151, 165);
+  border-radius: 5px;
+  opacity: 0; /* needs to be set to 0 to pop up */
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.9);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2),
+              0px 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all 0.3s ease;
+  font-family: monospace;
+}
+
+.modal-box .quit {
+  padding: 5px;
+}
+
+.modal-box.quit:hover {
+  cursor: pointer;
+}
+
+.modal-box.activeInfo{
+  z-index: 5;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.model-box .info-title {
+  height: 60px;
+  width: 100%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  padding: 0 35px;
+  font-size: 20px;
 }
