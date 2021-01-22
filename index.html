@@ -1,225 +1,251 @@
-<!doctype html>
-<html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NotRottenTomato</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <!-- FOUNDATION -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
-    <!-- MOTION UI -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.css">
-    <!--  FONT AWESOME -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+<!DOCTYPE html>
+<html>
+<title>NOTRottenTomato</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!-- FOUNDATION -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
+<!-- MOTION UI -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.css">
+<!--  FONT AWESOME -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+<!--CSS  -->
+<link rel="stylesheet" href="./assets/css/style.css">
 
-    
-   
-  </head>
-  <body>
-    
-    
-    <!-- START NAVIGATION -->
-    <div class="title-bar" data-responsive-toggle="mainNavigation" data-hide-for="medium">
-      <div class="title-bar-left">
-        <button class="menu-icon" type="button" data-toggle="mainNavigation"></button>
-        <div class="title-bar-title">Menu</div>
-      </div>
-      <div class="title-bar-right">
-        <img class="logo2" src="./assets/images/logo-icon.jpg" alt="">
-        SaveTv
-      </div>
+<body>
+
+<!-- NAVBAR -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button">SaveTv</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right">
+      <a href="#about-us" class="w3-bar-item w3-button"><i class="fa fa-user"></i>About Us</a>
+      <a href="#search-show" class="w3-bar-item w3-button"><i class="fa fa-search"></i></i>Search Shows</a>
+      <a href="#featured-shows" class="w3-bar-item w3-button"><i class="fa fa-th"></i>Featured Shows</a>
+      <a href="#contact-us" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i>Contact Us</a>
     </div>
+  </div>
+</div>
+
+<!-- PAGE CONTENT -->
+<div class="w3-content w3-padding" style="max-width:1564px">      
+  <!-- CAROUSEL -->
+  <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
+    <ul class="orbit-container">
+      
+      <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+      <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+      <li class="is-active orbit-slide">
+        
+        <img class="orbit-image" src="./assets/images/one.jpg" alt="Space">
+        <figcaption class="orbit-caption">THE BIG BANG THEORY</figcaption>
+      </li>
+      <li class="orbit-slide">
+        <img class="orbit-image" src="./assets/images/six.jpg" alt="Space">
+        <figcaption class="orbit-caption">GREEN ARROW</figcaption>
+      </li>
+      <li class="orbit-slide">
+        <img class="orbit-image" src="./assets/images/three.jpg" alt="Space">
+        <figcaption class="orbit-caption">SALEM</figcaption>
+      </li>
+      <li class="orbit-slide">
+        <img class="orbit-image" src="./assets/images/two.jpg" alt="Space">
+        <figcaption class="orbit-caption">GOTHAM</figcaption>
+      </li>
+    </ul>
     
-    <div class="top-bar" id="mainNavigation">
-      <div class="top-bar-left">
-        <ul class="menu vertical medium-horizontal">
-          <li class="hide-for-small-only logo"><img src="./assets/images/logo.gif" alt=""></li>
-          <li class="hide-for-small-only">SaveTV</li>
-        </ul>
-      </div>
-      <div class="top-bar-right">
-        <ul class="menu vertical medium-horizontal">
-          <li><a href="#about-us">About Us</a></li>
-          <li><a href="#search-show">Search Show</a></li>
-          <li><a href="#contact-us">Contact Us</a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <!-- CAROUSEL -->
-    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
-      <ul class="orbit-container">
-        <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-        <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-        <li class="is-active orbit-slide">
-          <img class="orbit-image" src="./assets/images/one.jpg" alt="Space">
-          <figcaption class="orbit-caption">THE BIG BANG THEORY</figcaption>
-        </li>
-        <li class="orbit-slide">
-          <img class="orbit-image" src="./assets/images/six.jpg" alt="Space">
-          <figcaption class="orbit-caption">GREEN ARROW</figcaption>
-        </li>
-        <li class="orbit-slide">
-          <img class="orbit-image" src="./assets/images/three.jpg" alt="Space">
-          <figcaption class="orbit-caption">SALEM</figcaption>
-        </li>
-        <li class="orbit-slide">
-          <img class="orbit-image" src="./assets/images/two.jpg" alt="Space">
-          <figcaption class="orbit-caption">GOTHAM</figcaption>
-        </li>
-      </ul>
-      <nav class="orbit-bullets">
-        <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
-        <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
-        <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
-        <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
-      </nav>
-    </div>
-    
-    <br>
+    <nav class="orbit-bullets">
+      <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
+      <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+      <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
+      <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
+    </nav>
+  </div>  
+  
+  
+  
+  <!-- SEARCH SHOW SECTION -->
+  <section id="search-show">
     <div class="text-center">
-      <h2>Featured Shows</h2>
+      <h2>Search For Your Favourite Show</h2>
       <hr>
     </div>
-    <!-- FEATURED SHOWS GRID -->
-    <div class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-3">
-
-      <div class="cell">
-        <div class="callout">
-          <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B"></p>
-          <p class="lead">Copernican Revolution caused an uproar</p>
-          <p class="subheader">Find Earth-like planets life outside the Solar System</p>
-        </div>
-      </div>
-      <div class="cell">
-        <div class="callout">
-          <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B"></p>
-          <p class="lead">Copernican Revolution caused an uproar</p>
-          <p class="subheader">Find Earth-like planets life outside the Solar System</p>
-        </div>
-      </div>
-      <div class="cell">
-        <div class="callout">
-          <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B"></p>
-          <p class="lead">Copernican Revolution caused an uproar</p>
-          <p class="subheader">Find Earth-like planets life outside the Solar System</p>
-        </div>
-      </div>
-      <div class="cell">
-        <div class="callout">
-          <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B"></p>
-          <p class="lead">Copernican Revolution caused an uproar</p>
-          <p class="subheader">Find Earth-like planets life outside the Solar System</p>
-        </div>
-      </div>
-      <div class="cell">
-        <div class="callout">
-          <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B"></p>
-          <p class="lead">Copernican Revolution caused an uproar</p>
-          <p class="subheader">Find Earth-like planets life outside the Solar System</p>
-        </div>
-      </div>
-      <div class="cell">
-        <div class="callout">
-          <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B"></p>
-          <p class="lead">Copernican Revolution caused an uproar</p>
-          <p class="subheader">Find Earth-like planets life outside the Solar System</p>
-        </div>
-      </div>
-    
+    <!--SEARCH BAR -->
+    <div class="hero-search-filter-content">
+      <form class="hero-search-filter-form" action="">
+        <input id="findlocate" class="hero-search-filter-form-near" type="text" />
+        <button class="button"><i class="fa fa-search"></i></button>
+      </form>
     </div>
-    <br>
-    <!-- SEARCH SHOW SECTION -->
-    <section id="search-show">
-      <div class="text-center">
-        <h2>Search For Your Favourite Show</h2>
-        <hr>
-      </div>
-
-      <!--SEARCH BAR -->
-      <div class="hero-search-filter-content">
-        <form class="hero-search-filter-form" action="">
-          <input id="findlocate" class="hero-search-filter-form-near" type="text" />
-          <button class="button"><i class="fa fa-search"></i></button>
-        </form>
-      </div>
-
-      <!--shows errors in html page-->
-      <div id="errorMessage"></div>
-
-      <!--MOVIE SEARCH CONTAINER-->
-      <div class="container">
-
-        <!--shows errors in html page-->
-        <div id="errorMessage"></div>
-
-        <!--Displays vertical slide of movie posters-->
-        <section id="resultsList"></section>
-        
-        <h2 class="type-sidelines custom-2"><span>LOREM IPSUM</span></h2>
-      </div>
-
-
-      <!-- SEARCH HISTORY DIV -->
-      <div class="row">
-        <div class="col-md-12 h-100 pb-3" id="search-history-container">
-            <div class="card w-100">
-                <ul class="list-group list-group-flush" id="search-history"></ul>
-            </div>
-        </div>
-      </div>
-    </section>
-
-    <!--MODEL BOX-->
-    <div class="modal-box">
-      <!--modal exit button-->
-        <button class="quit float-right"><i class="fi-x"></i></button>
-
-      <div class="info-title">
-          <h3>Title of the tv show goes here</h3>
-      </div>
-      <div class="info-list">
-          <div class="info">This is a test model poping up with slight animations</div> 
+    <!-- SEARCH HISTORY DIV -->
+    <div class="row">
+      <div class="col-md-12 h-100 pb-3" id="search-history-container">
+          <div class="card w-100">
+              <ul class="list-group list-group-flush" id="search-history"></ul>
+          </div>
       </div>
     </div>
+  </section>
   
-    <!-- FOOTER -->
-    <footer id="contact-us" class="callout large secondary">
-        <div class="grid-x grid-margin-x">
-        <div class="medium-6 cell">
-          <h3>Contact Us</h3>
-          <p>
-            Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. 
-            Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. S
-            uspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor.
-          </p>
-        </div>
-        <div class="medium-6 cell">
-          <label>Name
-            <input type="text" placeholder="Name">
-          </label>
-          <label>Email
-            <input type="text" placeholder="Email">
-          </label>
-          <label>
-             Message
-            <textarea placeholder="Tell Us Your Thoughts"></textarea>
-          </label>
-          <input type="submit" class="button expanded" value="Submit">
-        </div>
+  <!-- FEATURED SHOWS -->
+  <div id="featured-shows" class="text-center">
+    <h2>Featured Shows</h2>
+    <hr>
+  </div>
+  <!-- FEATURED SHOWS GRID -->
+  <div class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-3">
+    <div class="cell">
+      <div class="callout">
+        <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B"></p>
+        <p class="lead">Copernican Revolution caused an uproar</p>
+        <p class="subheader">Find Earth-like planets life outside the Solar System</p>
       </div>
-    </footer>
+    </div>
+    <div class="cell">
+      <div class="callout">
+        <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B"></p>
+        <p class="lead">Copernican Revolution caused an uproar</p>
+        <p class="subheader">Find Earth-like planets life outside the Solar System</p>
+      </div>
+    </div>
+    <div class="cell">
+      <div class="callout">
+        <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B"></p>
+        <p class="lead">Copernican Revolution caused an uproar</p>
+        <p class="subheader">Find Earth-like planets life outside the Solar System</p>
+      </div>
+    </div>
+    <div class="cell">
+      <div class="callout">
+        <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B"></p>
+        <p class="lead">Copernican Revolution caused an uproar</p>
+        <p class="subheader">Find Earth-like planets life outside the Solar System</p>
+      </div>
+    </div>
+    <div class="cell">
+      <div class="callout">
+        <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B"></p>
+        <p class="lead">Copernican Revolution caused an uproar</p>
+        <p class="subheader">Find Earth-like planets life outside the Solar System</p>
+      </div>
+    </div>
+    <div class="cell">
+      <div class="callout">
+        <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B"></p>
+        <p class="lead">Copernican Revolution caused an uproar</p>
+        <p class="subheader">Find Earth-like planets life outside the Solar System</p>
+      </div>
+    </div>
+  </div>
+<br>
+
+  <!-- ABOUT US SECTION -->
+  <div id="about-us" class="text-center">
+    <h2>ABOUT US</h2>
+       <p class="w3-opacity"><i>WE KNOW HOW MUCH YOU LOVE TV SHOWS</i></p>
+    <hr>
+  </div>
+    <p class="w3-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+      Exercitationem obcaecati at dolor deserunt nobis ipsum recusandae dolorem? Saepe porro, repudiandae vitae omnis nisi est, 
+      voluptas deleniti corporis quam placeat facere? Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Pariatur doloribus porro minus placeat rerum omnis deleniti, recusandae velit magni quis ratione, 
+      praesentium voluptate reiciendis qui dignissimos enim consequatur cum assumenda.
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+      Exercitationem obcaecati at dolor deserunt nobis ipsum recusandae dolorem? Saepe porro, repudiandae vitae omnis nisi est, 
+      voluptas deleniti corporis quam placeat facere? Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Pariatur doloribus porro minus placeat rerum omnis deleniti, recusandae velit magni quis ratione, 
+      praesentium voluptate reiciendis qui dignissimos enim consequatur cum assumenda.Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+      Exercitationem obcaecati at dolor deserunt nobis ipsum recusandae dolorem? Saepe porro, repudiandae vitae omnis nisi est, 
+      voluptas deleniti corporis quam placeat facere? Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Pariatur doloribus porro minus placeat rerum omnis deleniti, recusandae velit magni quis ratione, 
+      praesentium voluptate reiciendis.
+    </p>
+  <div class="w3-center w3-row w3-padding-32">
+    <h3 class="w3-opacity">MEET THE TEAM!!</h3>
+    <div class="w3-third">
+      <p>Name</p>
+      <img src="./assets/images/1.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+    </div>
+    <div class="w3-third">
+      <p>Name</p>
+      <img src="./assets/images/1.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+    </div>
+    <div class="w3-third">
+      <p>Name</p>
+      <img src="./assets/images/2.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+    </div>
+    <div class="w3-third">
+      <p>Name</p>
+      <img src="./assets/images/2.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+    </div>
+    <div class="w3-third">
+      <p>Name</p>
+      <img src="./assets/images/4.jpg" class="w3-round" alt="Random Name" style="width:60%">
+    </div>
+    <div class="w3-third">
+      <p>Name</p>
+      <img src="./assets/images/4.jpg" class="w3-round" alt="Random Name" style="width:60%">
+    </div>
+  </div>    
+
+
+  
+  <!-- Contact Section -->
+  <div id="contact-us" class="text-center">
+    <h2>Contact Us</h2>
+    <hr>
+  </div>
+
+  <div class="w3-container w3-padding-large w3-grey">
+    <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
+      <div class="w3-third w3-dark-grey">
+        <br>
+        <p><i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i></p>
+        <p>UTBootCamp.Group2@gmail.com</p>
+      </div>
+      <div class="w3-third w3-black">
+        <br>
+        <p><i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i></p>
+        <p>Toronto, ON</p>
+      </div>
+      <div class="w3-third w3-dark-grey">
+        <br>
+        <p><i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i></p>
+        <p>512312311</p>
+      </div>
+    </div>
     
 
-    
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.js"></script>
-    <script src="./assets/js/search-results.js"></script>
-    <script src="./assets/js/search-auto-fill.js"></script>
-    <script>
-      $(document).foundation();
-    </script>
-  </body>
+  <div class="w3-container w3-padding-32" id="contact">
+    <form action="/action_page.php" target="_blank">
+      <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Comment" required name="Comment">
+      <button class="w3-button w3-black w3-section" type="submit">
+        <i class="fa fa-paper-plane"></i> SEND MESSAGE
+      </button>
+    </form>
+  </div>
+
+</div>
+<!-- END PAGE CONTENT -->
+
+<script src="./assets/js/search-results.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.js"></script>
+<script>
+  $(document).foundation();
+</script>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p>Powered by <a href="https://github.com/UTBootCampGroup2/project-1" title="W3.CSS" target="_blank" class="w3-hover-text-green">SAVETV</a></p>
+</footer>
+
+</body>
 </html>
