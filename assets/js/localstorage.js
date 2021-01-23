@@ -49,13 +49,18 @@ var checkIfDateExists = function(date){
     } 
 }
 
-loadFromLocalStorage();
+var testSequence = function() {
+    loadFromLocalStorage();
 
-pushToDateArray('01/01/2021', '11:00', 'Game of thrones', 'Other relevant information');
-pushToDateArray('01/01/2021', '12:00', 'HIMYM', 'Other relevant information');
-pushToDateArray('02/01/2021', '10:00', 'HIMYM', 'Other relevant information');
+    pushToDateArray('01/01/2021', '11:00', 'Game of thrones', 'Other relevant information');
+    pushToDateArray('01/01/2021', '12:00', 'HIMYM', 'Other relevant information');
+    pushToDateArray('02/01/2021', '10:00', 'HIMYM', 'Other relevant information');
+    
+    saveToLocalStorage(dateArr);
+    
+    console.log(dateArr);
+    getSeries('girls');
+}
 
-saveToLocalStorage(dateArr);
+testSequence();
 
-console.log(dateArr);
-getSeries('girls');
