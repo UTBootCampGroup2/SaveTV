@@ -1,5 +1,8 @@
+
 <!DOCTYPE html>
 <html>
+
+<head>
 <title>SaveTV</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,15 +13,29 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.css">
 <!--  FONT AWESOME -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+<link
+      rel="stylesheet"
+      href="https://cdn.tutorialjinni.com/foundation/6.6.1/css/foundation.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css"
+    />
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css"
+/>
 <!--CSS  -->
 <link rel="stylesheet" href="./assets/css/style.css">
-
+</head>
 <body>
 
 <!-- NAVBAR -->
 <div class="w3-top">
   <div class="w3-bar w3-black w3-wide w3-padding w3-card">
-    <a href="#home" class="w3-bar-item w3-button">SaveTv</a>
+    <a href="#home" class="w3-bar-item w3"><img src="https://i.imgur.com/16Nal0G.gif" class="navbar-logo"/></a>
+    <a href="#home" class="w3-bar-item w3-button"></a>
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right">
       <a href="#about-us" class="w3-bar-item w3-button"><i class="fa fa-user"></i>About Us</a>
@@ -29,8 +46,59 @@
   </div>
 </div>
 
+<br>
+<br>
+<br>
+<br>
+
 <!-- PAGE CONTENT -->
 <div class="w3-content w3-padding" style="max-width:1564px">      
+
+<!-- SEARCH SHOW SECTION -->
+  <section id="search-show">
+    <div class="text-center">
+      <h2>Search For Your Favourite Show</h2>
+      <hr>
+    </div>
+    <!--SEARCH BAR -->
+    <div class="hero-search-filter-content">
+      <form class="hero-search-filter-form" action="">
+        <input id="findlocate" class="hero-search-filter-form-near" type="text" />
+        <button class="button"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+
+    <!--MOVIE SEARCH CONTAINER-->
+    <div class="container">
+
+    <!--shows errors in html page-->
+    <div id="errorMessage"></div>
+          
+    <!--Displays vertical slide of movie posters-->
+    <section id="resultsList"></section>
+                
+    </div>
+          
+    <!--MODEL BOX-->
+     <div class="modal-box">
+      <!--modal exit button-->
+         <button class="quit float-right"><i class="fi-x"></i></button>
+    </div>
+
+        <!-- SEARCH HISTORY DIV -->
+    <div class="row">
+        <div class="col-md-12 h-100 pb-3" id="search-history-container">
+            <div class="card w-100">
+                <ul class="list-group list-group-flush" id="search-history"></ul>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <br>
+
+    <br>
+
   <!-- CAROUSEL -->
   <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
     <ul class="orbit-container">
@@ -65,45 +133,7 @@
   </div>  
   
   
-  
-  <!-- SEARCH SHOW SECTION -->
-  <section id="search-show">
-    <div class="text-center">
-      <h2>Search For Your Favourite Show</h2>
-      <hr>
-    </div>
-    <!--SEARCH BAR -->
-    <div class="hero-search-filter-content">
-      <form class="hero-search-filter-form" action="">
-        <input id="findlocate" class="hero-search-filter-form-near" type="text" />
-        <button class="button"><i class="fa fa-search"></i></button>
-      </form>
-    </div>
 
-    <!--MOVIE SEARCH CONTAINER-->
-    <div class="container">
-
-      <!--shows errors in html page-->
-      <div id="errorMessage"></div>
-
-      <!--Displays vertical slide of movie posters-->
-      <section id="resultsList"></section>
-      
-      <h2 class="type-sidelines custom-2"><span>LOREM IPSUM</span></h2>
-    </div>
-
-    <!--MODEL BOX-->
-    <div class="modal-box">
-      <!--modal exit button-->
-        <button class="quit float-right"><i class="fi-x"></i></button>
-
-      <div class="info-title">
-          <h3>Title of the tv show goes here</h3>
-      </div>
-      <div class="info-list">
-          <div class="info">This is a test model poping up with slight animations</div> 
-      </div>
-    </div>
 
     <!-- SEARCH HISTORY DIV -->
     <div class="row">
@@ -173,7 +203,12 @@
        <p class="w3-opacity"><i>WE KNOW HOW MUCH YOU LOVE TV SHOWS</i></p>
     <hr>
   </div>
-    <p class="w3-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    <p class="w3-justify">Let's face it: 2020 sucked in an unprecedented way, by every single measure known to mankind, except one—television! 
+        With nowhere to go and nothing better to do, we've had little choice but to rely on the TV gods to entertain us! 
+        SaveTV is your go-to when it comes to finding out the schedule and rating of your favourite show. 
+        
+        
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
       Exercitationem obcaecati at dolor deserunt nobis ipsum recusandae dolorem? Saepe porro, repudiandae vitae omnis nisi est, 
       voluptas deleniti corporis quam placeat facere? Lorem ipsum dolor sit amet consectetur adipisicing elit. 
       Pariatur doloribus porro minus placeat rerum omnis deleniti, recusandae velit magni quis ratione, 
@@ -260,8 +295,19 @@
 <!-- END PAGE CONTENT -->
 
 <script src="./assets/js/search-results.js"></script>
+
 <script src="./assets/js/search-auto-fill.js"></script>
-<script src="./assets/js/localstorage.js"></script>
+ <script src="./assets/js/localstorage.js"></script> 
+
+ <script src ="https://cdn.tutorialjinni.com/foundation/6.6.1/js/plugins/foundation.core.min.js"></script>
+    <script src="https://cdn.tutorialjinni.com/foundation/6.6.1/js/plugins/foundation.accordion.min.js"></script>
+    <script src="https://cdn.tutorialjinni.com/foundation/6.6.1/js/plugins/foundation.util.mediaQuery.min.js"></script>
+    <script src="https://cdn.tutorialjinni.com/foundation/6.6.1/js/plugins/foundation.reveal.min.js"></script>
+    <script src="https://cdn.tutorialjinni.com/foundation/6.6.1/js/plugins/foundation.util.touch.min.js"></script>
+    <script src="https://cdn.tutorialjinni.com/foundation/6.6.1/js/plugins/foundation.util.triggers.min.js"></script>
+    <script src="https://cdn.tutorialjinni.com/foundation/6.6.1/js/plugins/foundation.util.motion.min.js"></script>
+    <script src="https://cdn.tutorialjinni.com/foundation/6.6.1/js/plugins/foundation.util.keyboard.min.js"></script>
+
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.js"></script>
