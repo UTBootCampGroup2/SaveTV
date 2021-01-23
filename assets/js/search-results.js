@@ -24,6 +24,9 @@ var searchSubmitHandler = function(event) {
   
       // clear old content
       searchInputEl.value = '';
+      while(resultContainerEl.firstChild) {
+        resultContainerEl.removeChild(resultContainerEl.firstChild);
+      }
     } else {
       alert('Please enter a TV show');
     }
