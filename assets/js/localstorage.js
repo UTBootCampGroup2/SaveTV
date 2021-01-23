@@ -30,7 +30,7 @@ var pushToDateArray = function(date, time, series, seriesData){
     if(dateArr.length == 0){
         dateArr.push(tempArr);
     }else{
-        if(checkIfDateExists(date)){
+        if(dateExists(date)){
 
         }else{
             dateArr.push(tempArr);
@@ -38,7 +38,7 @@ var pushToDateArray = function(date, time, series, seriesData){
     } 
 }
 
-var checkIfDateExists = function(date){
+var dateExists = function(date){
     for(var i=0; i<dateArr.length; i++){          
         if(dateArr[i][0]==date){
             dateArr[i].push(objData);
