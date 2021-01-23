@@ -30,6 +30,8 @@ function searchShow(query) {
   
     // displays error message in html
    // document.getElementById("errorMessage").innerHTML = "";
+
+   
       
   })
   .catch((error) => {
