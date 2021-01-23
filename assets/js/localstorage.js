@@ -62,5 +62,5 @@ var localStorageTestSequence = function() {
     getSeries('girls');
 }
 
-testSequence();
+localStorageTestSequence();
 
