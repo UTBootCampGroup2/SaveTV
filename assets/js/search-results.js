@@ -102,12 +102,15 @@ var displaySeriesdata = function(series) {
     if(series.status != 'Ended') {
       //console.log(series.schedule.time + series.schedule.days);
 
-      var scheduleEl = document.createElement('p');
-      scheduleEl.className = ('search-schedule')
-      scheduleEl.setAttribute("id", 'search-schedule');
-      scheduleEl.textContent = series.schedule.time + " "+ series.schedule.days;
-    
-      seriesDataEl.appendChild(scheduleEl);
+      var showDays = [];
+      var showDays = series.schedule.days;
+      for(var i=0; i <showDays.length; i ++ ) {
+        var scheduleEl = document.createElement('p');
+        scheduleEl.className = ('search-schedule')
+        scheduleEl.setAttribute("id", 'search-schedule');
+        scheduleEl.textContent = series.schedule.time + " "+ showDays[i];
+        seriesDataEl.appendChild(scheduleEl);
+      }
     }
     else {
       //console.log(series.status);
