@@ -38,8 +38,8 @@ function searchShow(query) {
       console.log("error", error);
   });
 }
-
-document.onclick = function (event) {
+var resultsList = document.getElementById("resultsList");
+resultsList.onclick = function (event) {
   event.preventDefault();
   var target = event.target;
 
@@ -49,7 +49,10 @@ document.onclick = function (event) {
 
       var movieId = target.id;
       console.log(movieId);
-      displayModal();
+
+      var movieName = target.name
+      console.log("movie name", movieName);
+      displayModal(movieName);
   }
 }
 
@@ -79,7 +82,7 @@ function showImage(movieInfo) {
 
 }
 
-function displayModal() {
+function displayModal(movieName) {
   var modalBox = document.querySelector(".modal-box");
   modalBox.classList.add("activeInfo");
 
@@ -87,6 +90,7 @@ function displayModal() {
   exitBtn.onclick = ()=>{
     modalBox.classList.remove("activeInfo");
   }
+  getSeries(movieName);
 }
 
 let searchTimeout = 0;

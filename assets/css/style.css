@@ -55,15 +55,15 @@ body {
 }
 
 /* SCROLL BAR FOR IMG RESULT */
-#resultsList  {
+#resultsList {
   display: flex;
   overflow-x: auto;
 }
-#resultsList img {
+.resultsList img {
   width:300px;
   transition: 250ms all;
 }
-#resultsList img:hover{
+.resultsList img:hover{
   margin-left: 0 40px;
   transform: scale(1.1);
   cursor: pointer;
