@@ -3,25 +3,27 @@
 var searchShowEl = document.querySelector("#search-show");
 var searchInputEl = document.querySelector('#findlocate');
 var searchFormEl = document.querySelector('.hero-search-filter-form');
+var modalBox = document.querySelector(".modal-box");
 
 // create search result container
 var resultContainerEl = document.createElement('div');
 resultContainerEl.classList = 'result-container';
 resultContainerEl.setAttribute('id', 'result-container');
-searchShowEl.appendChild(resultContainerEl);
+modalBox.appendChild(resultContainerEl);
 
 // Function for submiting search
 var searchSubmitHandler = function(event) {
     // prevent page from refreshing
     event.preventDefault();
-    console.log(event);
+    //console.log(event);
     // get value from input element
     var seriesName = searchInputEl.value.trim();
     
     if (seriesName) {
-      console.log(seriesName);
-      getSeries(seriesName);
-  
+      //console.log(seriesName);
+      //getSeries(seriesName);
+      // call function to display modal
+      displayModal(seriesName);
       // clear old content
       searchInputEl.value = '';
       while(resultContainerEl.firstChild) {
@@ -43,8 +45,8 @@ var getSeries = function(seriesName) {
       if (response.ok) {
         //console.log(response);
         response.json().then(function(data) {
-          console.log("In getSeries: ");
-          console.log(data);
+          //console.log("In getSeries: ");
+          //console.log(data);
           displaySeriesdata(data);
         });
       } else {
@@ -70,8 +72,8 @@ var displaySeriesdata = function(series) {
 
     // display Image
     if(series.image != null && series.image.medium != null){
-      console.log("series.image.medium");
-      console.log(series.image.medium);
+      //console.log("series.image.medium");
+      //console.log(series.image.medium);
       var imageEl = document.createElement('img');
       imageEl.className = ('search-image')
       imageEl.setAttribute("id", 'search-image');
@@ -81,7 +83,7 @@ var displaySeriesdata = function(series) {
     
 
     // display name of the series
-    console.log(series.name);
+    //console.log(series.name);
     var nameEl = document.createElement('p');
     nameEl.className = ('search-name')
     nameEl.setAttribute("id", 'search-name');
@@ -155,9 +157,9 @@ var seriesRating = function(id) {
     .then(function(response) {
         // request was successful
         if (response.ok) {
-        console.log(response);
+        //console.log(response);
         response.json().then(function(data) {
-            console.log(data);
+            //console.log(data);
             displayRating(data);
         });
         } else {
