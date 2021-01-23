@@ -25,13 +25,10 @@ function searchShow(query) {
       }));
     }
     renderResults(movieInfoList);
-  
-    // displays error message in html
-    document.getElementById("errorMessage").innerHTML = "";
       
   })
   .catch((error) => {
-      document.getElementById("errorMessage").innerHTML = error;
+      console.log('error', error);
   });
 }
 var resultsList = document.getElementById("resultsList");
