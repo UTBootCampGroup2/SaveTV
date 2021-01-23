@@ -1,17 +1,19 @@
 var dateArr = [];
-var localStorageData = 'localStorageSaveTv';
+var localStorageName = 'group2-SaveTv-items';
 
 var loadFromLocalStorage = function() {
-    dateArr = JSON.parse(localStorage.getItem(dateArr));
-    if (!dateArr) {
-     dateArr = [];
-    }
+    var data = JSON.parse(localStorage.getItem(localStorageName));
+    return data ? data : [];
 };
-var saveToLocalStorage = function() {
-    localStorage.setItem("dateArr", JSON.stringify(dateArr));
+var saveToLocalStorage = function(data) {
+    localStorage.setItem(localStorageName, JSON.stringify(data));
 };
 
-var sendData = function(date, time, series, seriesData){
+var clearDateArray = function() {
+    dateArr = [];
+}
+
+var pushToDateArray = function(date, time, series, seriesData){
 
     objData = {
         objTime : time,
@@ -49,11 +51,11 @@ var checkIfDateExists = function(date){
 
 loadFromLocalStorage();
 
-sendData('01/01/2021', '11:00', 'Game of thrones', 'Other relevant information');
-sendData('01/01/2021', '12:00', 'HIMYM', 'Other relevant information');
-sendData('02/01/2021', '10:00', 'HIMYM', 'Other relevant information');
+pushToDateArray('01/01/2021', '11:00', 'Game of thrones', 'Other relevant information');
+pushToDateArray('01/01/2021', '12:00', 'HIMYM', 'Other relevant information');
+pushToDateArray('02/01/2021', '10:00', 'HIMYM', 'Other relevant information');
 
-saveToLocalStorage();
+saveToLocalStorage(dateArr);
 
 console.log(dateArr);
 getSeries('girls');
