@@ -24,11 +24,8 @@ var searchSubmitHandler = function(event) {
       //getSeries(seriesName);
       // call function to display modal
       displayModal(seriesName);
-      // clear old content
+      // clear old content from search input
       searchInputEl.value = '';
-      while(resultContainerEl.firstChild) {
-        resultContainerEl.removeChild(resultContainerEl.firstChild);
-      }
     } else {
       alert('Please enter a TV show');
     }
@@ -36,6 +33,10 @@ var searchSubmitHandler = function(event) {
 
 // Function for searching the series name entered in the input form element
 var getSeries = function(seriesName) {
+    // clear old content from modal
+    while(resultContainerEl.firstChild) {
+      resultContainerEl.removeChild(resultContainerEl.firstChild);
+    }
  
     var apiUrl = "http://api.tvmaze.com/singlesearch/shows?q=" + seriesName; // From Rose
     fetch(apiUrl)
