@@ -49,7 +49,7 @@ var checkIfDateExists = function(date){
     } 
 }
 
-var testSequence = function() {
+var localStorageTestSequence = function() {
     loadFromLocalStorage();
 
     pushToDateArray('01/01/2021', '11:00', 'Game of thrones', 'Other relevant information');
