@@ -11,7 +11,7 @@ A brief summary of the page/code content.
 <!-- ABOUT SAVETV -->
 ## About SaveTv
 
-![SaveTv Logo](/assets/images/logo-icon.jpg)
+![SaveTv Logo](/assets/images/logo.gif)
 
 SaveTV provides a quick and easy way to search up your favorite shows, what time they are scheduled to play, find out other highly rated and related shows, and a one-click composed reminder schedule for upcoming show time.
 
