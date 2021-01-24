@@ -101,10 +101,26 @@ var displaySeriesdata = function(series) {
     websiteEl.setAttribute("target", '_blank');
     seriesDataEl.appendChild(websiteEl);
 
-    // display status or schedule
-    if(series.status != 'Ended') {
-      //console.log(series.schedule.time + series.schedule.days);
+    // display schedule, savebutton and network or webchannel if show is running
+    if(series.status === "Running") {
+      
+      // display network or webChannel
+      var networkSearchEl = document.createElement('p');
+      if(networkSearchEl) {
+        networkSearchEl.className = ('search-network');
+        networkSearchEl.setAttribute("id", 'search-network');
+        networkSearchEl.textContent = series.network.name;
+        seriesDataEl.appendChild(networkSearchEl);
+      }
+      else {
+        var webChannelSearchEl = document.createElement('p');
+        webChannelSearchEl.className = ('search-webchannel');
+        webChannelSearchEl.setAttribute("id", 'search-webchannel');
+        webChannelSearchEl.textContent = series.webChannel.name;
+        seriesDataEl.appendChild(webChannelSearchEl);
+      }
 
+      // display schedule
       var showDays = [];
       var showDays = series.schedule.days;
       for(var i=0; i <showDays.length; i ++ ) {
@@ -114,17 +130,7 @@ var displaySeriesdata = function(series) {
         scheduleEl.textContent = series.schedule.time + " "+ showDays[i];
         seriesDataEl.appendChild(scheduleEl);
       }
-    }
-    else {
-      //console.log(series.status);
-      var statusEl = document.createElement('p');
-      statusEl.className = ('search-status')
-      statusEl.setAttribute("id", 'search-status');
-      statusEl.textContent = "Status: " + series.status;
-      seriesDataEl.appendChild(statusEl);
-    }
-    // condition for checking if the show is still running, then add save button
-    if(status === "Running") {
+
       // add save button
       var saveButtonEl = document.createElement('button');
       saveButtonEl.className = 'save-button';
@@ -132,7 +138,15 @@ var displaySeriesdata = function(series) {
       saveButtonEl.setAttribute('type', 'button');
       saveButtonEl.innerHTML = "<i class='fa fa-search'></i>"
       saveButtonEl.textContent = "Save";
-      seriesDataEl.appendChild(saveButtonEl);
+      seriesDataEl.appendChild(saveButtonEl);    
+    }
+    else {
+      //display status if show has ended
+      var statusEl = document.createElement('p');
+      statusEl.className = ('search-status')
+      statusEl.setAttribute("id", 'search-status');
+      statusEl.textContent = "Status: " + series.status;
+      seriesDataEl.appendChild(statusEl);
     }
 
     // display summary
