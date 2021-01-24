@@ -81,7 +81,7 @@ hr {
 }
 
 /* SCROLL BAR FOR IMG RESULT */
-#resultsList  {
+#resultsList {
   display: flex;
   overflow-x: auto;
 }
