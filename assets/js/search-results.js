@@ -22,7 +22,8 @@ var searchSubmitHandler = function(event) {
       displayModal(seriesName);
       // clear old content from search input
       searchInputEl.value = '';
-    } else {
+    } 
+    else {
       alert('Please enter a TV show');
     }
 };
@@ -30,7 +31,7 @@ var searchSubmitHandler = function(event) {
 // Function for searching the series name entered in the input form element
 var getSeries = function(seriesName) {
     // clear old content from modal
-    while(resultContainerEl.firstChild) {
+    while (resultContainerEl.firstChild) {
       resultContainerEl.removeChild(resultContainerEl.firstChild);
     }
     var apiUrl = "http://api.tvmaze.com/singlesearch/shows?q=" + seriesName; // From Rose
@@ -41,7 +42,8 @@ var getSeries = function(seriesName) {
         response.json().then(function(data) {
           displaySeriesdata(data);
         });
-      } else {
+      } 
+      else {
         alert('Error: ' + response.statusText);
       }
     })
@@ -143,11 +145,7 @@ var displaySeriesdata = function(series) {
 
     // call function to get rating
     seriesRating(series.externals.imdb);
-  }
-  else{
-    console.log("displaySeriesdata input is null");
-  }
-    
+  }    
 };
 
 // Function for getting rating
@@ -180,7 +178,6 @@ var displayRating = function(rating) {
     resultContainerEl.appendChild(ratingContainerEl);
 
     // display rating score
-    console.log(rating.Ratings[0].Value);
     var ratingEl = document.createElement('p');
     ratingEl.className = 'rating-score';
     ratingEl.setAttribute('id', 'rating-score');
@@ -188,7 +185,6 @@ var displayRating = function(rating) {
     ratingContainerEl.appendChild(ratingEl);
   
     // display rating source
-    console.log(rating.Ratings[0].Source);
     var sourceEl = document.createElement('span');
     sourceEl.className = 'rating-source';
     sourceEl.setAttribute('id', 'rating-source');
