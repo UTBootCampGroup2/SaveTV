@@ -38,10 +38,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.c
     <a href="#home" class="w3-bar-item w3-button"></a>
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right">
-      <a href="#about-us" class="w3-bar-item w3-button"><i class="fa fa-user"></i>About Us</a>
-      <a href="#search-show" class="w3-bar-item w3-button"><i class="fa fa-search"></i></i>Search Shows</a>
-      <a href="#featured-shows" class="w3-bar-item w3-button"><i class="fa fa-th"></i>Featured Shows</a>
-      <a href="#contact-us" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i>Contact Us</a>
+      <a href="#home" class="w3-bar-item w3-button"><i class="fa fa-home"></i></i>Home</a>
+      <a href="#about-us" class="w3-bar-item w3-button"><i class="fa fa-user"></i>About</a>
+      <a href="#my-favs" class="w3-bar-item w3-button"><i class="fa fa-heart"></i></i>Favourites</a>
+      <a href="#search-show" class="w3-bar-item w3-button"><i class="fa fa-search"></i></i>Search</a>
+      <a href="#featured-shows" class="w3-bar-item w3-button"><i class="fa fa-th"></i>Featured</a>
+      <a href="#contact-us" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i>Contact</a>
     </div>
   </div>
 </div>
@@ -86,17 +88,21 @@ href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.c
     </div>
 
         <!-- SEARCH HISTORY DIV -->
-    <div class="row">
-        <div class="col-md-12 h-100 pb-3" id="search-history-container">
-            <div class="card w-100">
-                <ul class="list-group list-group-flush" id="search-history"></ul>
-            </div>
+        <div id="my-favs" class="text-center">
+          <h2>Favourites</h2>
+          <p class="w3-opacity"><i>SAVE YOUR FAVOURITE SHOWS HERE</i></p>
+          <hr>
         </div>
-      </div>
-    </section>
+          <div class="row">
+            <div class="col-md-12 h-100 pb-3" id="search-history-container">
+                <div class="card w-100">
+                    <ul class="list-group list-group-flush" id="search-history"></ul>
+                </div>
+            </div>
+          </div>
+  </section>
 
     <br>
-
     <br>
 
   <!-- CAROUSEL -->
@@ -134,16 +140,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.c
   
   
 
-
-    <!-- SEARCH HISTORY DIV -->
-    <div class="row">
-      <div class="col-md-12 h-100 pb-3" id="search-history-container">
-          <div class="card w-100">
-              <ul class="list-group list-group-flush" id="search-history"></ul>
-          </div>
-      </div>
-    </div>
-  </section>
+</section>
   
   <!-- FEATURED SHOWS -->
   <div id="featured-shows" class="text-center">
@@ -205,7 +202,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.c
 
   <!-- ABOUT US SECTION -->
   <div id="about-us" class="text-center">
-    <h2>ABOUT US</h2>
+    <h2>About Us</h2>
        <p class="w3-opacity"><i>WE KNOW HOW MUCH YOU LOVE TV SHOWS</i></p>
     <hr>
   </div>
@@ -230,7 +227,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.c
       praesentium voluptate reiciendis.
     </p>
   <div class="w3-center w3-row w3-padding-32">
-    <h3 class="w3-opacity">MEET THE TEAM!!</h3>
+    <h3 class="w3-opacity">Meet The Team!!</h3>
     <div class="w3-third">
       <p>Name</p>
       <img src="./assets/images/1.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
@@ -299,11 +296,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.c
 
 </div>
 <!-- END PAGE CONTENT -->
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
 <script src="./assets/js/search-results.js"></script>
 
 <script src="./assets/js/search-auto-fill.js"></script>
- <script src="./assets/js/localstorage.js"></script> 
+ <script src="./assets/js/localstorage.js"></script>
 
  <script src ="https://cdn.tutorialjinni.com/foundation/6.6.1/js/plugins/foundation.core.min.js"></script>
     <script src="https://cdn.tutorialjinni.com/foundation/6.6.1/js/plugins/foundation.accordion.min.js"></script>
@@ -314,7 +312,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.c
     <script src="https://cdn.tutorialjinni.com/foundation/6.6.1/js/plugins/foundation.util.motion.min.js"></script>
     <script src="https://cdn.tutorialjinni.com/foundation/6.6.1/js/plugins/foundation.util.keyboard.min.js"></script>
 
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.js"></script>
 <script>

@@ -36,8 +36,8 @@ function searchShow(query) {
       document.getElementById("errorMessage").innerHTML = error;
   });
 }
-
-document.onclick = function (event) {
+var resultsList = document.getElementById("resultsList");
+resultsList.onclick = function (event) {
   event.preventDefault();
   var target = event.target;
 
@@ -46,9 +46,20 @@ document.onclick = function (event) {
       console.log('event', event);
 
       var movieId = target.id;
-      console.log(movieId);
-      displayModal();
-  }
+      console.log("Movie ID:", movieId);
+
+      var movieName = target.name;
+      console.log("movie name", movieName);
+
+      displayModal(movieName);
+
+  } 
+}
+
+// new path to display data when image is clicked
+function generateUrl(path) {
+  var modalUrl = `http://api.tvmaze.com${path}`
+  return modalUrl;
 }
 
 // lists JSON objects on HTML 
@@ -73,11 +84,11 @@ function showImage(movieInfo) {
   img.alt = movieInfo.movieName;
 
   //images will populate in <section>
-  document.querySelector('section').appendChild(img);
+  document.querySelector('#resultsList').appendChild(img);
 
 }
 
-function displayModal() {
+function displayModal(movieName) {
   var modalBox = document.querySelector(".modal-box");
   modalBox.classList.add("activeInfo");
 
@@ -85,6 +96,7 @@ function displayModal() {
   exitBtn.onclick = ()=>{
     modalBox.classList.remove("activeInfo");
   }
+  getSeries(movieName);
 }
 
 let searchTimeout = 0;
