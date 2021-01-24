@@ -28,7 +28,7 @@ body {
 .modal-box {
   width: 80%;
   height: 85%;
-  background: rgb(144, 151, 165);
+  background: rgb(166, 175, 195);
   border-radius: 5px;
   opacity: 0; /* needs to be set to 0 to pop up */
   pointer-events: none;
@@ -53,6 +53,39 @@ body {
   opacity: 1;
   pointer-events: auto;
 }
+
+.search-image {
+  padding: 10px;
+  align-self: center;
+}
+
+.search-name {
+text-align: center;
+}
+
+.search-website {
+    color: rgb(255, 255, 255); 
+    font-size: 16px; 
+    line-height: 16px; 
+    padding: 6px; 
+    border-radius: 10px; 
+   background-color: rgb(152, 116, 158);
+}
+
+.save-button {
+  color: rgb(255, 255, 255); 
+  font-size: 16px; 
+  line-height: 16px; 
+  padding: 6px; 
+  border-radius: 10px; 
+ background-color: rgb(152, 116, 158);
+}
+
+.search-summary p {
+  float: center;
+  padding: 10px;
+}
+
 
 /* SCROLL BAR FOR IMG RESULT */
 #resultsList {
