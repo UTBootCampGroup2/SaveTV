@@ -34,7 +34,7 @@ var getSeries = function(seriesName) {
     while (resultContainerEl.firstChild) {
       resultContainerEl.removeChild(resultContainerEl.firstChild);
     }
-    var apiUrl = "http://api.tvmaze.com/singlesearch/shows?q=" + seriesName; // From Rose
+    var apiUrl = "http://api.tvmaze.com/singlesearch/shows?q=" + seriesName;
     fetch(apiUrl)
     .then(function(response) {
       // request was successful
@@ -93,7 +93,7 @@ var displaySeriesdata = function(series) {
       
       // display network or webChannel
       var networkSearchEl = document.createElement('p');
-      if(networkSearchEl) {
+      if(series.network != null) {
         networkSearchEl.className = ('search-network');
         networkSearchEl.setAttribute("id", 'search-network');
         networkSearchEl.textContent = series.network.name;
