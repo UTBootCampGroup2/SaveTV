@@ -3,26 +3,28 @@
 var searchShowEl = document.querySelector("#search-show");
 var searchInputEl = document.querySelector('#findlocate');
 var searchFormEl = document.querySelector('.hero-search-filter-form');
+var modalBox = document.querySelector(".modal-box");
 
 // create search result container
 var resultContainerEl = document.createElement('div');
 resultContainerEl.classList = 'result-container';
 resultContainerEl.setAttribute('id', 'result-container');
-searchShowEl.appendChild(resultContainerEl);
+modalBox.appendChild(resultContainerEl);
 
 // Function for submiting search
 var searchSubmitHandler = function(event) {
     // prevent page from refreshing
     event.preventDefault();
-    console.log(event);
+    //console.log(event);
     // get value from input element
     var seriesName = searchInputEl.value.trim();
     
     if (seriesName) {
-      console.log(seriesName);
-      getSeries(seriesName);
-  
-      // clear old content
+      //console.log(seriesName);
+      //getSeries(seriesName);
+      // call function to display modal
+      displayModal(seriesName);
+      // clear old content from search input
       searchInputEl.value = '';
     } else {
       alert('Please enter a TV show');
@@ -31,6 +33,10 @@ var searchSubmitHandler = function(event) {
 
 // Function for searching the series name entered in the input form element
 var getSeries = function(seriesName) {
+    // clear old content from modal
+    while(resultContainerEl.firstChild) {
+      resultContainerEl.removeChild(resultContainerEl.firstChild);
+    }
  
     var apiUrl = "http://api.tvmaze.com/singlesearch/shows?q=" + seriesName; // From Rose
     fetch(apiUrl)
@@ -40,8 +46,8 @@ var getSeries = function(seriesName) {
       if (response.ok) {
         //console.log(response);
         response.json().then(function(data) {
-          console.log("In getSeries: ");
-          console.log(data);
+          //console.log("In getSeries: ");
+          //console.log(data);
           displaySeriesdata(data);
         });
       } else {
@@ -67,8 +73,8 @@ var displaySeriesdata = function(series) {
 
     // display Image
     if(series.image != null && series.image.medium != null){
-      console.log("series.image.medium");
-      console.log(series.image.medium);
+      //console.log("series.image.medium");
+      //console.log(series.image.medium);
       var imageEl = document.createElement('img');
       imageEl.className = ('search-image')
       imageEl.setAttribute("id", 'search-image');
@@ -78,7 +84,7 @@ var displaySeriesdata = function(series) {
     
 
     // display name of the series
-    console.log(series.name);
+    //console.log(series.name);
     var nameEl = document.createElement('p');
     nameEl.className = ('search-name')
     nameEl.setAttribute("id", 'search-name');
@@ -99,12 +105,15 @@ var displaySeriesdata = function(series) {
     if(series.status != 'Ended') {
       //console.log(series.schedule.time + series.schedule.days);
 
-      var scheduleEl = document.createElement('p');
-      scheduleEl.className = ('search-schedule')
-      scheduleEl.setAttribute("id", 'search-schedule');
-      scheduleEl.textContent = series.schedule.time + " "+ series.schedule.days;
-    
-      seriesDataEl.appendChild(scheduleEl);
+      var showDays = [];
+      var showDays = series.schedule.days;
+      for(var i=0; i <showDays.length; i ++ ) {
+        var scheduleEl = document.createElement('p');
+        scheduleEl.className = ('search-schedule')
+        scheduleEl.setAttribute("id", 'search-schedule');
+        scheduleEl.textContent = series.schedule.time + " "+ showDays[i];
+        seriesDataEl.appendChild(scheduleEl);
+      }
     }
     else {
       //console.log(series.status);
@@ -149,9 +158,9 @@ var seriesRating = function(id) {
     .then(function(response) {
         // request was successful
         if (response.ok) {
-        console.log(response);
+        //console.log(response);
         response.json().then(function(data) {
-            console.log(data);
+            //console.log(data);
             displayRating(data);
         });
         } else {
