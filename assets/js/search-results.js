@@ -123,15 +123,17 @@ var displaySeriesdata = function(series) {
       statusEl.textContent = "Status: " + series.status;
       seriesDataEl.appendChild(statusEl);
     }
-
-    // add save button
-    var saveButtonEl = document.createElement('button');
-    saveButtonEl.className = 'save-button';
-    saveButtonEl.setAttribute('id', 'save-button');
-    saveButtonEl.setAttribute('type', 'button');
-    saveButtonEl.innerHTML = "<i class='fa fa-search'></i>"
-    saveButtonEl.textContent = "Save";
-    seriesDataEl.appendChild(saveButtonEl);
+    // condition for checking if the show is still running, then add save button
+    if(status === "Running") {
+      // add save button
+      var saveButtonEl = document.createElement('button');
+      saveButtonEl.className = 'save-button';
+      saveButtonEl.setAttribute('id', 'save-button');
+      saveButtonEl.setAttribute('type', 'button');
+      saveButtonEl.innerHTML = "<i class='fa fa-search'></i>"
+      saveButtonEl.textContent = "Save";
+      seriesDataEl.appendChild(saveButtonEl);
+    }
 
     // display summary
     var summaryEl = document.createElement('div');
