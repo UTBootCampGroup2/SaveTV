@@ -15,18 +15,15 @@ modalBox.appendChild(resultContainerEl);
 var searchSubmitHandler = function(event) {
     // prevent page from refreshing
     event.preventDefault();
-    //console.log(event);
     // get value from input element
     var seriesName = searchInputEl.value.trim();
-    
     if (seriesName) {
-      //console.log(seriesName);
-      //getSeries(seriesName);
       // call function to display modal
       displayModal(seriesName);
       // clear old content from search input
       searchInputEl.value = '';
-    } else {
+    } 
+    else {
       alert('Please enter a TV show');
     }
 };
@@ -34,23 +31,19 @@ var searchSubmitHandler = function(event) {
 // Function for searching the series name entered in the input form element
 var getSeries = function(seriesName) {
     // clear old content from modal
-    while(resultContainerEl.firstChild) {
+    while (resultContainerEl.firstChild) {
       resultContainerEl.removeChild(resultContainerEl.firstChild);
     }
- 
-    var apiUrl = "http://api.tvmaze.com/singlesearch/shows?q=" + seriesName; // From Rose
+    var apiUrl = "http://api.tvmaze.com/singlesearch/shows?q=" + seriesName;
     fetch(apiUrl)
     .then(function(response) {
       // request was successful
-      
       if (response.ok) {
-        //console.log(response);
         response.json().then(function(data) {
-          //console.log("In getSeries: ");
-          //console.log(data);
           displaySeriesdata(data);
         });
-      } else {
+      } 
+      else {
         alert('Error: ' + response.statusText);
       }
     })
@@ -63,8 +56,8 @@ var getSeries = function(seriesName) {
 // Function for displaying the serached series information
 var displaySeriesdata = function(series) {
   
-  // console.log(series);
   if(series != null){
+
     // create section for holding series data
     var seriesDataEl = document.createElement('div');
     seriesDataEl.className = 'series-data';
@@ -72,9 +65,7 @@ var displaySeriesdata = function(series) {
     resultContainerEl.appendChild(seriesDataEl);
 
     // display Image
-    if(series.image != null && series.image.medium != null){
-      //console.log("series.image.medium");
-      //console.log(series.image.medium);
+    if(series.image != null && series.image.medium != null) {
       var imageEl = document.createElement('img');
       imageEl.className = ('search-image')
       imageEl.setAttribute("id", 'search-image');
@@ -82,9 +73,7 @@ var displaySeriesdata = function(series) {
       seriesDataEl.appendChild(imageEl);
     }
     
-
     // display name of the series
-    //console.log(series.name);
     var nameEl = document.createElement('p');
     nameEl.className = ('search-name')
     nameEl.setAttribute("id", 'search-name');
@@ -92,7 +81,6 @@ var displaySeriesdata = function(series) {
     seriesDataEl.appendChild(nameEl);
 
     // display website
-    //console.log(series.officialSite);
     var websiteEl = document.createElement('a');
     websiteEl.textContent = "Visit Website";
     websiteEl.className = ('search-website')
@@ -101,37 +89,60 @@ var displaySeriesdata = function(series) {
     websiteEl.setAttribute("target", '_blank');
     seriesDataEl.appendChild(websiteEl);
 
-    // display status or schedule
-    if(series.status != 'Ended') {
-      //console.log(series.schedule.time + series.schedule.days);
+    // display schedule, savebutton and network or webchannel if show is running
+    if(series.status === "Running") {
+      
+      // display network or webChannel
+      var networkSearchEl = document.createElement('p');
+      if(series.network != null) {
+        networkSearchEl.className = ('search-network');
+        networkSearchEl.setAttribute("id", 'search-network');
+        networkSearchEl.textContent = series.network.name;
+        seriesDataEl.appendChild(networkSearchEl);
+      }
+      else {
+        var webChannelSearchEl = document.createElement('p');
+        webChannelSearchEl.className = ('search-webchannel');
+        webChannelSearchEl.setAttribute("id", 'search-webchannel');
+        webChannelSearchEl.textContent = series.webChannel.name;
+        seriesDataEl.appendChild(webChannelSearchEl);
+      }
 
+      // display schedule
       var showDays = [];
       var showDays = series.schedule.days;
-      for(var i=0; i <showDays.length; i ++ ) {
+      for(var i=0; i <showDays.length; i ++) {
         var scheduleEl = document.createElement('p');
         scheduleEl.className = ('search-schedule')
         scheduleEl.setAttribute("id", 'search-schedule');
         scheduleEl.textContent = series.schedule.time + " "+ showDays[i];
         seriesDataEl.appendChild(scheduleEl);
       }
+
+      // check if next episode exists
+      if (typeof(series._links.nextepisode) !== 'undefined') {
+        var nexEpisodeUrl = series._links.nextepisode.href;
+        var seriesName = series.name;
+        // add save button
+        var saveButtonEl = document.createElement('button');
+        saveButtonEl.className = 'save-button';
+        saveButtonEl.setAttribute('id', 'save-button');
+        saveButtonEl.setAttribute('type', 'button');
+        saveButtonEl.innerHTML = "<i class='fa fa-search'></i>"
+        saveButtonEl.textContent = "Save";
+        // call function in localstorage.js when save button is clicked
+        saveButtonEl.setAttribute('onclick', 'saveBtnHandlerLocalStorage("' + nexEpisodeUrl + '", ' + '"' + seriesName + '")');
+        seriesDataEl.appendChild(saveButtonEl); 
+      }
     }
     else {
-      //console.log(series.status);
+      //display status if show has ended
       var statusEl = document.createElement('p');
       statusEl.className = ('search-status')
       statusEl.setAttribute("id", 'search-status');
       statusEl.textContent = "Status: " + series.status;
       seriesDataEl.appendChild(statusEl);
     }
-
-    // add save button
-    var saveButtonEl = document.createElement('button');
-    saveButtonEl.className = 'save-button';
-    saveButtonEl.setAttribute('id', 'save-button');
-    saveButtonEl.setAttribute('type', 'button');
-    saveButtonEl.innerHTML = "<i class='fa fa-search'></i>"
-    saveButtonEl.textContent = "Save";
-    seriesDataEl.appendChild(saveButtonEl);
 
     // display summary
     var summaryEl = document.createElement('div');
@@ -142,11 +153,7 @@ var displaySeriesdata = function(series) {
 
     // call function to get rating
     seriesRating(series.externals.imdb);
-  }
-  else{
-    console.log("displaySeriesdata input is null");
-  }
-    
+  }    
 };
 
 // Function for getting rating
@@ -158,9 +165,7 @@ var seriesRating = function(id) {
     .then(function(response) {
         // request was successful
         if (response.ok) {
-        //console.log(response);
         response.json().then(function(data) {
-            //console.log(data);
             displayRating(data);
         });
         } else {
@@ -173,7 +178,6 @@ var seriesRating = function(id) {
 };
 
 // Function to display rating
-
 var displayRating = function(rating) {
 
     var ratingContainerEl = document.createElement('div');
@@ -182,7 +186,6 @@ var displayRating = function(rating) {
     resultContainerEl.appendChild(ratingContainerEl);
 
     // display rating score
-    console.log(rating.Ratings[0].Value);
     var ratingEl = document.createElement('p');
     ratingEl.className = 'rating-score';
     ratingEl.setAttribute('id', 'rating-score');
@@ -190,7 +193,6 @@ var displayRating = function(rating) {
     ratingContainerEl.appendChild(ratingEl);
   
     // display rating source
-    console.log(rating.Ratings[0].Source);
     var sourceEl = document.createElement('span');
     sourceEl.className = 'rating-source';
     sourceEl.setAttribute('id', 'rating-source');
