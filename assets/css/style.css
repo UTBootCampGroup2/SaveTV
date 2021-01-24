@@ -2,6 +2,14 @@ body {
   background-color: grey;
 }
 
+hr { 
+  border-color: black;
+}
+
+.w3-opacity {
+  text-shadow: black;
+}
+
 /* NAVBAR STYLING */
 .w3-right a i {
   color:   rgb(215, 96, 245);
@@ -85,4 +93,15 @@ body {
   margin-left: 0 40px;
   transform: scale(1.1);
   cursor: pointer;
+}
+
+/* SAVE FAVOURITES SECTION */
+.w-100 {
+  border-color: black;
+}
+
+/* FEATURED SHOW CARDS */
+.callout {
+  border-radius: 10px;
+  box-shadow: 8px 10px rgb(59, 59, 59);
 }
