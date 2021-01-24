@@ -57,6 +57,7 @@ var getSeries = function(seriesName) {
 var displaySeriesdata = function(series) {
   
   if(series != null){
+
     // create section for holding series data
     var seriesDataEl = document.createElement('div');
     seriesDataEl.className = 'series-data';
@@ -118,14 +119,21 @@ var displaySeriesdata = function(series) {
         seriesDataEl.appendChild(scheduleEl);
       }
 
-      // add save button
-      var saveButtonEl = document.createElement('button');
-      saveButtonEl.className = 'save-button';
-      saveButtonEl.setAttribute('id', 'save-button');
-      saveButtonEl.setAttribute('type', 'button');
-      saveButtonEl.innerHTML = "<i class='fa fa-search'></i>"
-      saveButtonEl.textContent = "Save";
-      seriesDataEl.appendChild(saveButtonEl);    
+      // check if next episode exists
+      if (typeof(series._links.nextepisode) !== 'undefined') {
+        var nexEpisodeUrl = series._links.nextepisode.href;
+        var seriesName = series.name;
+        // add save button
+        var saveButtonEl = document.createElement('button');
+        saveButtonEl.className = 'save-button';
+        saveButtonEl.setAttribute('id', 'save-button');
+        saveButtonEl.setAttribute('type', 'button');
+        saveButtonEl.innerHTML = "<i class='fa fa-search'></i>"
+        saveButtonEl.textContent = "Save";
+        // call function in localstorage.js when save button is clicked
+        saveButtonEl.setAttribute('onclick', 'saveBtnHandlerLocalStorage("' + nexEpisodeUrl + '", ' + '"' + seriesName + '")');
+        seriesDataEl.appendChild(saveButtonEl); 
+      }
     }
     else {
       //display status if show has ended
