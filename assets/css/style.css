@@ -1,5 +1,23 @@
 body {
-  background-color: gray;
+  background-color: grey;
+}
+
+hr { 
+  border-color: black;
+}
+
+.w3-opacity {
+  text-shadow: black;
+}
+
+/* NAVBAR STYLING */
+.w3-right a i {
+  color:   rgb(215, 96, 245);
+}
+
+.w3-right {
+  padding-top: 0.8%;
+  font-size: 16px;
 }
 
 /* SEARCH BAR SECTION */
@@ -12,12 +30,20 @@ body {
   display: -webkit-flex;
   width: 70%;
   background: gray;
+}
 
+.hero-search-filter-form-near {
+  border-radius: 25px 0 0 25px;
+}
+
+.button {
+  background-color: black;
+  border-radius: 0 25px 25px 0;
 }
 
 .hero-search-filter-form input,
 .hero-search-filter-form .button {
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 
 .navbar-logo {
@@ -67,4 +93,15 @@ body {
   margin-left: 0 40px;
   transform: scale(1.1);
   cursor: pointer;
+}
+
+/* SAVE FAVOURITES SECTION */
+.w-100 {
+  border-color: black;
+}
+
+/* FEATURED SHOW CARDS */
+.callout {
+  border-radius: 10px;
+  box-shadow: 8px 10px rgb(59, 59, 59);
 }
