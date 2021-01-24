@@ -15,13 +15,9 @@ modalBox.appendChild(resultContainerEl);
 var searchSubmitHandler = function(event) {
     // prevent page from refreshing
     event.preventDefault();
-    //console.log(event);
     // get value from input element
     var seriesName = searchInputEl.value.trim();
-    
     if (seriesName) {
-      //console.log(seriesName);
-      //getSeries(seriesName);
       // call function to display modal
       displayModal(seriesName);
       // clear old content from search input
@@ -37,17 +33,12 @@ var getSeries = function(seriesName) {
     while(resultContainerEl.firstChild) {
       resultContainerEl.removeChild(resultContainerEl.firstChild);
     }
- 
     var apiUrl = "http://api.tvmaze.com/singlesearch/shows?q=" + seriesName; // From Rose
     fetch(apiUrl)
     .then(function(response) {
       // request was successful
-      
       if (response.ok) {
-        //console.log(response);
         response.json().then(function(data) {
-          //console.log("In getSeries: ");
-          //console.log(data);
           displaySeriesdata(data);
         });
       } else {
@@ -63,7 +54,6 @@ var getSeries = function(seriesName) {
 // Function for displaying the serached series information
 var displaySeriesdata = function(series) {
   
-  // console.log(series);
   if(series != null){
     // create section for holding series data
     var seriesDataEl = document.createElement('div');
@@ -72,9 +62,7 @@ var displaySeriesdata = function(series) {
     resultContainerEl.appendChild(seriesDataEl);
 
     // display Image
-    if(series.image != null && series.image.medium != null){
-      //console.log("series.image.medium");
-      //console.log(series.image.medium);
+    if(series.image != null && series.image.medium != null) {
       var imageEl = document.createElement('img');
       imageEl.className = ('search-image')
       imageEl.setAttribute("id", 'search-image');
@@ -82,9 +70,7 @@ var displaySeriesdata = function(series) {
       seriesDataEl.appendChild(imageEl);
     }
     
-
     // display name of the series
-    //console.log(series.name);
     var nameEl = document.createElement('p');
     nameEl.className = ('search-name')
     nameEl.setAttribute("id", 'search-name');
@@ -92,7 +78,6 @@ var displaySeriesdata = function(series) {
     seriesDataEl.appendChild(nameEl);
 
     // display website
-    //console.log(series.officialSite);
     var websiteEl = document.createElement('a');
     websiteEl.textContent = "Visit Website";
     websiteEl.className = ('search-website')
@@ -123,7 +108,7 @@ var displaySeriesdata = function(series) {
       // display schedule
       var showDays = [];
       var showDays = series.schedule.days;
-      for(var i=0; i <showDays.length; i ++ ) {
+      for(var i=0; i <showDays.length; i ++) {
         var scheduleEl = document.createElement('p');
         scheduleEl.className = ('search-schedule')
         scheduleEl.setAttribute("id", 'search-schedule');
@@ -174,9 +159,7 @@ var seriesRating = function(id) {
     .then(function(response) {
         // request was successful
         if (response.ok) {
-        //console.log(response);
         response.json().then(function(data) {
-            //console.log(data);
             displayRating(data);
         });
         } else {
@@ -189,7 +172,6 @@ var seriesRating = function(id) {
 };
 
 // Function to display rating
-
 var displayRating = function(rating) {
 
     var ratingContainerEl = document.createElement('div');
