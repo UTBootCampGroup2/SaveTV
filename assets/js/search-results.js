@@ -41,6 +41,8 @@ var getSeries = function(seriesName) {
       if (response.ok) {
         response.json().then(function(data) {
           displaySeriesdata(data);
+          // console.log(data);
+
         });
       } 
       else {
@@ -54,6 +56,9 @@ var getSeries = function(seriesName) {
 
 // Function for displaying the serached series information
 var displaySeriesdata = function(series) {
+
+  // console.log(nexEpisodeUrl); 
+  // return;
   
   if(series != null){
 
