@@ -17,7 +17,7 @@ function searchShow(query) {
     
     // gets specific string from array
     if(jsonData != null){
-      console.log(jsonData);
+      // console.log(jsonData);
       var movieInfoList =  jsonData.map((element) => ({
         movieId: element.show.id, 
         movieName: element.show.name, 
@@ -28,7 +28,7 @@ function searchShow(query) {
       
   })
   .catch((error) => {
-      console.log('error', error);
+      //console.log('error', error);
   });
 }
 var resultsList = document.getElementById("resultsList");
@@ -36,12 +36,12 @@ resultsList.onclick = function (event) {
   event.preventDefault();
   var target = event.target;
   if (target.tagName.toLowerCase() === 'img') {
-      console.log("img click test") //works
-      console.log('event', event);
+      // console.log("img click test") //works
+      // console.log('event', event);
       var movieId = target.id;
-      console.log(movieId);
+      // console.log(movieId);
       var movieName = target.name;
-      console.log("movie name", movieName);
+      // console.log("movie name", movieName);
       displayModal(movieName);
   }
 }
@@ -56,7 +56,7 @@ function renderResults(movieInfoList) {
 }
 function showImage(movieInfo) {
   // creates img
-  console.log(movieInfo);
+  // console.log(movieInfo);
   var img = document.createElement("img");
   img.id = movieInfo.movieId;
   img.name = movieInfo.movieName;
@@ -85,7 +85,7 @@ window.onload = () => {
           return;
       }
       searchTimeout = setTimeout(() => {
-        console.log(searchField.value.trim());
+        // console.log(searchField.value.trim());
           searchShow(searchField.value.trim());
       }, 250);
       

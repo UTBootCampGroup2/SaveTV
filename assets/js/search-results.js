@@ -45,10 +45,10 @@ var getSeries = function(seriesName) {
       
       if (response.ok) {
         //console.log(response);
-        response.json().then(function(data) {
-          //console.log("In getSeries: ");
-          //console.log(data);
+        response.json().then(function(data){
           displaySeriesdata(data);
+          // console.log(data);
+
         });
       } else {
         alert('Error: ' + response.statusText);
@@ -57,13 +57,14 @@ var getSeries = function(seriesName) {
     .catch(function(error) {
       alert('Unable to connect');
     });
-  
 };
 
 // Function for displaying the serached series information
 var displaySeriesdata = function(series) {
+
+  // console.log(nexEpisodeUrl); 
+  // return;
   
-  // console.log(series);
   if(series != null){
     // create section for holding series data
     var seriesDataEl = document.createElement('div');
@@ -124,14 +125,26 @@ var displaySeriesdata = function(series) {
       seriesDataEl.appendChild(statusEl);
     }
 
-    // add save button
-    var saveButtonEl = document.createElement('button');
-    saveButtonEl.className = 'save-button';
-    saveButtonEl.setAttribute('id', 'save-button');
-    saveButtonEl.setAttribute('type', 'button');
-    saveButtonEl.innerHTML = "<i class='fa fa-search'></i>"
-    saveButtonEl.textContent = "Save";
-    seriesDataEl.appendChild(saveButtonEl);
+
+    // check if next episode exists:
+    if (typeof(series._links.nextepisode) !== 'undefined') {
+      var nexEpisodeUrl = series._links.nextepisode.href;
+      var seriesName = series.name;
+      // add save button
+      var saveButtonEl = document.createElement('button');
+      saveButtonEl.className = 'save-button';
+      saveButtonEl.setAttribute('id', 'save-button');
+      saveButtonEl.setAttribute('type', 'button');
+      saveButtonEl.innerHTML = "<i class='fa fa-search'></i>"
+      saveButtonEl.textContent = "Save";
+      saveButtonEl.setAttribute('onclick', 'saveBtnHandlerLocalStorage("' + nexEpisodeUrl + '", ' + '"' + seriesName + '")');
+      // saveButtonEl.setAttribute("action", "javascript:document.location.reload()");
+      // saveButtonEl.setAttribute("onClick", "window.location.reload()");
+      seriesDataEl.appendChild(saveButtonEl);
+    }
+
+
+    
 
     // display summary
     var summaryEl = document.createElement('div');
@@ -161,7 +174,7 @@ var seriesRating = function(id) {
         //console.log(response);
         response.json().then(function(data) {
             //console.log(data);
-            displayRating(data);
+            // displayRating(data);
         });
         } else {
         alert('Error: ' + response.statusText);
@@ -182,7 +195,7 @@ var displayRating = function(rating) {
     resultContainerEl.appendChild(ratingContainerEl);
 
     // display rating score
-    console.log(rating.Ratings[0].Value);
+    // console.log(rating.Ratings[0].Value);
     var ratingEl = document.createElement('p');
     ratingEl.className = 'rating-score';
     ratingEl.setAttribute('id', 'rating-score');
