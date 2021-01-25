@@ -123,29 +123,54 @@ var displaySeriesdata = function(series) {
         seriesDataEl.appendChild(scheduleEl);
       }
 
-      // check if next episode exists
+      // Create ""Add to Watch List" button for "running" and "next episode doesnt exist" shows
       if (typeof(series._links.nextepisode) !== 'undefined') {
         var nexEpisodeUrl = series._links.nextepisode.href;
         var seriesName = series.name;
-        // add save button
+        // display "Add to Watch List" save button
         var saveButtonEl = document.createElement('button');
         saveButtonEl.className = 'save-button';
         saveButtonEl.setAttribute('id', 'save-button');
         saveButtonEl.setAttribute('type', 'button');
         saveButtonEl.innerHTML = "<i class='fa fa-search'></i>"
-        saveButtonEl.textContent = "Save";
+        saveButtonEl.textContent = "Add to Watch List";
         // call function in localstorage.js when save button is clicked
         saveButtonEl.setAttribute('onclick', 'saveBtnHandlerLocalStorage("' + nexEpisodeUrl + '", ' + '"' + seriesName + '")');
         seriesDataEl.appendChild(saveButtonEl); 
       }
+      // Create "Add to Fvourite" button for "Running" and "next episode exists" shows
+      else {
+        // display "Add to Favourite" save button
+        var saveButtonEl = document.createElement('button');
+        saveButtonEl.className = 'save-button';
+        saveButtonEl.setAttribute('id', 'save-button');
+        saveButtonEl.setAttribute('type', 'button');
+        saveButtonEl.innerHTML = "<i class='fa fa-search'></i>"
+        saveButtonEl.textContent = "Add To Favourite";
+        // call function in localstorage.js when save button is clicked
+        saveButtonEl.setAttribute('onclick', 'addFavHandlerLocalStorage("' + series._links.self.href + '")');
+        seriesDataEl.appendChild(saveButtonEl);
+      }
     }
-    else {
-      //display status if show has ended
+    //display status and button for "ended" shows
+    // donot display schedule, network
+    else if(series.status === "Ended") {
       var statusEl = document.createElement('p');
       statusEl.className = ('search-status')
       statusEl.setAttribute("id", 'search-status');
       statusEl.textContent = "Status: " + series.status;
       seriesDataEl.appendChild(statusEl);
+
+      // display "Add to Favourite" save button
+      var saveButtonEl = document.createElement('button');
+      saveButtonEl.className = 'save-button';
+      saveButtonEl.setAttribute('id', 'save-button');
+      saveButtonEl.setAttribute('type', 'button');
+      saveButtonEl.innerHTML = "<i class='fa fa-search'></i>"
+      saveButtonEl.textContent = "Add To Favourite";
+      // call function in localstorage.js when save button is clicked
+      saveButtonEl.setAttribute('onclick', 'addFavHandlerLocalStorage("' + series._links.self.href + '")');
+      seriesDataEl.appendChild(saveButtonEl);
     }
 
     // display summary
