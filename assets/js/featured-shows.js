@@ -55,15 +55,28 @@ var todaysShows = function () {
     });
   };
   
-  // function for display shows
-  var displayFeaturedShows = function(featuredShows) {
+// function for display shows
+var displayFeaturedShows = function(featuredShows) {
   
-    // generate random number
-    var arr = [];
-    while(arr.length < 8){
-        var r = Math.floor(Math.random() * featuredShows.length);
-        if(arr.indexOf(r) === -1) arr.push(r);
-    }
+  // generate random number
+  var arr = [];
+  while(arr.length < 8){
+      var r = Math.floor(Math.random() * featuredShows.length);
+      if(arr.indexOf(r) === -1) arr.push(r);
+  }
+
+  // First featured show
+  var hasImage0 = featuredShows[arr[0]].show.image;
+  // reload if image is not present
+  if(hasImage0 === null){
+    location.reload();
+  }
+  featuredImageEl0.removeAttribute('src');
+  featuredImageEl0.setAttribute('src', hasImage0.medium);
+  featuredImageEl0.removeAttribute('alt');
+  featuredShowName0 = featuredShows[arr[0]].show.name;
+  featuredImageEl0.setAttribute('alt', "Poster of " + featuredShowName0);
+  featuredwebEl0.setAttribute('href', featuredShows[arr[0]].show.officialSite);
    
 
 
