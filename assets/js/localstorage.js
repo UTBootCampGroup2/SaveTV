@@ -84,6 +84,7 @@ var checkIfEpisodeExists = function(epi, pos){
 var localStorageCall = function(apiUrl, seriesName) {
     
     loadFromLocalStorage();
+
     fetch(apiUrl)
         .then(function(response) {
             
@@ -95,13 +96,14 @@ var localStorageCall = function(apiUrl, seriesName) {
                     var url = data.url;
                     pushToDateArray(data.airdate, data.airtime, seriesName, data.name, data.url);
                     saveToLocalStorage();
+                    window.location.reload();
                 });
             } else {
                 alert('Error: ' + response.statusText);
             }
         })
     .catch(function(error) {
-        alert('Unable to connect');
+        alert('Unable to connect From Local storage');
     });
 }
 
@@ -144,8 +146,8 @@ var showCalendarInfo = function(){
     }
 }
 var saveBtnHandlerLocalStorage=function(nextEpisodeUrl, seriesName){
+    // console.log(nextEpisodeUrl);
     localStorageCall(nextEpisodeUrl, seriesName);
-    window.location.reload();
 }
 
 showCalendarInfo();
