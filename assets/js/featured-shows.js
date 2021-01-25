@@ -58,4 +58,13 @@ var todaysShows = function () {
     featuredImageEl6.setAttribute('src', featuredShows[5].show.image.medium);
 
   };
+
+// Event listeners for showing details of featured shows
+featuredDetailsEl0.addEventListener('click', showDetails0);
+featuredDetailsEl1.addEventListener('click', showDetails1);
+featuredDetailsEl2.addEventListener('click', showDetails2);
+featuredDetailsEl3.addEventListener('click', showDetails3);
+featuredDetailsEl4.addEventListener('click', showDetails4);
+featuredDetailsEl5.addEventListener('click', showDetails5);
+
   todaysShows();
