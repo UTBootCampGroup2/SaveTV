@@ -59,6 +59,26 @@ var todaysShows = function () {
 
   };
 
+// Functions for displaying details in modal
+var showDetails0 = function() {
+  displayModal(featuredShowName0);
+};
+var showDetails1 = function() {
+  displayModal(featuredShowName1);
+};
+var showDetails2 = function() {
+  displayModal(featuredShowName2);
+};
+var showDetails3 = function() {
+  displayModal(featuredShowName3);
+};
+var showDetails4 = function() {
+  displayModal(featuredShowName4);
+};
+var showDetails5 = function() {
+  displayModal(featuredShowName5);
+};
+
 // Event listeners for showing details of featured shows
 featuredDetailsEl0.addEventListener('click', showDetails0);
 featuredDetailsEl1.addEventListener('click', showDetails1);
