@@ -1,4 +1,36 @@
+// Global variables
 var date = moment().format('YYYY-MM-DD');
+
+var featuredImageEl0 = document.getElementById('image0');
+var featuredwebEl0 = document.getElementById('web0');
+var featuredDetailsEl0 = document.getElementById('details0');
+var featuredShowName0 = null;
+
+var featuredImageEl1 = document.getElementById('image1');
+var featuredwebEl1 = document.getElementById('web1');
+var featuredDetailsEl1 = document.getElementById('details1');
+var featuredShowName1 = null;
+
+var featuredImageEl2 = document.getElementById('image2');
+var featuredwebEl2 = document.getElementById('web2');
+var featuredDetailsEl2 = document.getElementById('details2');
+var featuredShowName2 = null;
+
+var featuredImageEl3 = document.getElementById('image3');
+var featuredwebEl3 = document.getElementById('web3');
+var featuredDetailsEl3 = document.getElementById('details3');
+var featuredShowName3 = null;
+
+var featuredImageEl4 = document.getElementById('image4');
+var featuredwebEl4 = document.getElementById('web4');
+var featuredDetailsEl4 = document.getElementById('details4');
+var featuredShowName4 = null;
+
+var featuredImageEl5 = document.getElementById('image5');
+var featuredwebEl5 = document.getElementById('web5');
+var featuredDetailsEl5 = document.getElementById('details5');
+var featuredShowName5 = null;
+
 
 // function to fetch shows for the day
 var todaysShows = function () {
