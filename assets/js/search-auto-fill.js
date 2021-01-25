@@ -82,6 +82,9 @@ window.onload = () => {
   searchField.onkeyup = (event) => {
       clearTimeout(searchTimeout);
       if(searchField.value.trim().length === 0) {
+        while (resultsList.firstChild) {
+          resultsList.removeChild(resultsList.firstChild);
+        }
           return;
       }
       searchTimeout = setTimeout(() => {
