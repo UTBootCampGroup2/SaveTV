@@ -188,8 +188,8 @@ var checkIfFavExists = function(favName){
         if(favName == favArr[i][0]){
             return true;
         }
-        return false;
     }
+    return false;
 }
 
 // Push to Favourtire array:
