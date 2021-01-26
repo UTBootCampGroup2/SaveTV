@@ -41,8 +41,6 @@ var getSeries = function(seriesName) {
       if (response.ok) {
         response.json().then(function(data) {
           displaySeriesdata(data);
-          // console.log(data);
-
         });
       } 
       else {
@@ -56,12 +54,8 @@ var getSeries = function(seriesName) {
 
 // Function for displaying the serached series information
 var displaySeriesdata = function(series) {
-
-  // console.log(nexEpisodeUrl); 
-  // return;
   
   if(series != null){
-
     // create section for holding series data
     var seriesDataEl = document.createElement('div');
     seriesDataEl.className = 'series-data';
@@ -95,7 +89,6 @@ var displaySeriesdata = function(series) {
 
     // display schedule, savebutton and network or webchannel if show is running
     if(series.status === "Running") {
-      
       // display network or webChannel
       var networkSearchEl = document.createElement('p');
       if(series.network != null) {
@@ -122,46 +115,35 @@ var displaySeriesdata = function(series) {
         scheduleEl.textContent = series.schedule.time + " "+ showDays[i];
         seriesDataEl.appendChild(scheduleEl);
       }
-
-      // Create ""Add to Watch List" button for "running" and "next episode doesnt exist" shows
+/* 
+Code Changed by Fazle:
+*/    
+      // if series is running show 'Remind' button to add to calendar
       if (typeof(series._links.nextepisode) !== 'undefined') {
-        var nexEpisodeUrl = series._links.nextepisode.href;
         var seriesName = series.name;
-        // display "Add to Watch List" save button
+        // add save button
         var saveButtonEl = document.createElement('button');
         saveButtonEl.className = 'save-button';
         saveButtonEl.setAttribute('id', 'save-button');
         saveButtonEl.setAttribute('type', 'button');
         saveButtonEl.innerHTML = "<i class='fa fa-search'></i>"
+        var nexEpisodeUrl = series._links.nextepisode.href;
         saveButtonEl.textContent = "Add to Watch List";
         // call function in localstorage.js when save button is clicked
         saveButtonEl.setAttribute('onclick', 'saveBtnHandlerLocalStorage("' + nexEpisodeUrl + '", ' + '"' + seriesName + '")');
-        seriesDataEl.appendChild(saveButtonEl); 
       }
-      // Create "Add to Fvourite" button for "Running" and "next episode exists" shows
-      else {
-        // display "Add to Favourite" save button
-        var saveButtonEl = document.createElement('button');
-        saveButtonEl.className = 'save-button';
-        saveButtonEl.setAttribute('id', 'save-button');
-        saveButtonEl.setAttribute('type', 'button');
-        saveButtonEl.innerHTML = "<i class='fa fa-search'></i>"
-        saveButtonEl.textContent = "Add To Favourite";
-        // call function in localstorage.js when save button is clicked
-        saveButtonEl.setAttribute('onclick', 'addFavHandlerLocalStorage("' + series._links.self.href + '")');
-        seriesDataEl.appendChild(saveButtonEl);
-      }
+      seriesDataEl.appendChild(saveButtonEl); 
     }
-    //display status and button for "ended" shows
-    // donot display schedule, network
     else {
+      //display status if show has ended
       var statusEl = document.createElement('p');
       statusEl.className = ('search-status')
       statusEl.setAttribute("id", 'search-status');
       statusEl.textContent = "Status: " + series.status;
       seriesDataEl.appendChild(statusEl);
-
-      // display "Add to Favourite" save button
+/* 
+Code Changed by Fazle:
+*/ 
       var saveButtonEl = document.createElement('button');
       saveButtonEl.className = 'save-button';
       saveButtonEl.setAttribute('id', 'save-button');
@@ -171,7 +153,9 @@ var displaySeriesdata = function(series) {
       // call function in localstorage.js when save button is clicked
       saveButtonEl.setAttribute('onclick', 'addFavHandlerLocalStorage("' + series._links.self.href + '")');
       seriesDataEl.appendChild(saveButtonEl);
+
     }
+    
 
     // display summary
     var summaryEl = document.createElement('div');
@@ -218,7 +202,7 @@ var displayRating = function(rating) {
     var ratingEl = document.createElement('p');
     ratingEl.className = 'rating-score';
     ratingEl.setAttribute('id', 'rating-score');
-    ratingEl.textContent = rating.Ratings[0].Value;
+    // ratingEl.textContent = rating.Ratings[0].Value;
     ratingContainerEl.appendChild(ratingEl);
   
     // display rating source
