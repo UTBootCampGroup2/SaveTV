@@ -124,11 +124,10 @@ top: -65%;
 }
 
 .search-summary p {
-  
-  float: center;
-  padding: 5px;
-  position: relative;
-  top: -80%
+  padding: 10px;
+  position: absolute;
+  top: 10%;
+  left: 29%;
 
 }
 
