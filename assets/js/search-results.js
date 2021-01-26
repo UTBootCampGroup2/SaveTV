@@ -60,7 +60,7 @@ var displaySeriesdata = function(series) {
   // console.log(nexEpisodeUrl); 
   // return;
   
-  if(series != null){
+  if(series != null) {
 
     // create section for holding series data
     var seriesDataEl = document.createElement('div');
@@ -208,7 +208,7 @@ var seriesRating = function(id) {
 
 // Function to display rating
 var displayRating = function(rating) {
-
+  if (rating.Ratings[0] != null) {
     var ratingContainerEl = document.createElement('div');
     ratingContainerEl.className = 'rating-container';
     ratingContainerEl.setAttribute('id', 'rating-container');
@@ -218,16 +218,17 @@ var displayRating = function(rating) {
     var ratingEl = document.createElement('p');
     ratingEl.className = 'rating-score';
     ratingEl.setAttribute('id', 'rating-score');
-    ratingEl.textContent = rating.Ratings[0].Value;
+    ratingEl.textContent = rating.Ratings[0].value;
     ratingContainerEl.appendChild(ratingEl);
   
     // display rating source
     var sourceEl = document.createElement('span');
     sourceEl.className = 'rating-source';
     sourceEl.setAttribute('id', 'rating-source');
+ 
     sourceEl.textContent = " Source: " + rating.Ratings[0].Source;
     ratingEl.appendChild(sourceEl);
-  
+  }
 };
 
 // add event listener for search
