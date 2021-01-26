@@ -24,7 +24,9 @@ var searchSubmitHandler = function(event) {
       searchInputEl.value = '';
     } 
     else {
-      alert('Please enter a TV show');
+      //alert('Please enter a TV show');
+      searchInputEl.removeAttribute('placeholder');
+      searchInputEl.setAttribute('placeholder', 'please enter a TV show');
     }
 };
 
@@ -46,11 +48,11 @@ var getSeries = function(seriesName) {
         });
       } 
       else {
-        alert('Error: ' + response.statusText);
+        console.log('Error: ' + response.statusText);
       }
     })
     .catch(function(error) {
-      alert('Unable to connect');
+      console.log('Unable to connect');
     });
 };
 
@@ -201,11 +203,11 @@ var seriesRating = function(id) {
             displayRating(data);
         });
         } else {
-        alert('Error: ' + response.statusText);
+        console.log('Error: ' + response.statusText);
         }
     })
     .catch(function(error) {
-        alert('Unable to connect');
+        console.log('Unable to connect');
     });
 };
 
