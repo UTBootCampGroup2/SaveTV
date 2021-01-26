@@ -154,7 +154,7 @@ var displaySeriesdata = function(series) {
     }
     //display status and button for "ended" shows
     // donot display schedule, network
-    else if(series.status === "Ended") {
+    else {
       var statusEl = document.createElement('p');
       statusEl.className = ('search-status')
       statusEl.setAttribute("id", 'search-status');
