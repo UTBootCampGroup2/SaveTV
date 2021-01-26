@@ -1,11 +1,6 @@
-# project-1
+# SaveTv
 
-A brief summary of the page/code content.
-
-# Description
-
-* SaveTv is an application that searches for random/sponsored Tv content.
-* Featured shows will display the current top rating shows on tv in your region. 
+A brief yet descriptive summary of the content within SaveTv.
 
 
 <!-- ABOUT SAVETV -->
@@ -13,9 +8,15 @@ A brief summary of the page/code content.
 
 ![SaveTv Logo](/assets/images/logo.gif)
 
-SaveTV provides a quick and easy way to search up your favorite shows, what time they are scheduled to play, find out other highly rated and related shows, and a one-click composed reminder schedule for upcoming show time.
+* SaveTv is an application that allows you to search for random and sponsored Tv content.
+* SaveTv also provides the user with a responsive, easy to navigate way to search up your favorite shows at any time. 
 
-As the name suggests, SaveTv can and __will__ save your Search Results, which will allow you to be kept up-to-date on all of your favorite shows!
+### Featured Section
+
+* The featured section displays Tv shows that are currently being broadcasted, as well as shows that __have__ been and __will__ be broadcasted.
+* It can also be used to set notifications to remind you what time they are scheduled to play. 
+* Use this to find out other highly rated and related shows.
+* Finally, don't forget to use the one-click composed reminder schedule for upcoming show times, which will allow you to be kept up-to-date on all of your favorite shows!
 
 ### Built With
 
@@ -30,6 +31,3 @@ Here are some of the more advanced languages used within SaveTv
 * [Motion UI](https://zurb.com/playground/motion-ui)
 * [jQuery](https://jquery.com)
 * [Foundation](https://get.foundation/)
-
-
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
