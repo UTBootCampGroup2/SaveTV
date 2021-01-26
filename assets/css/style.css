@@ -1,5 +1,23 @@
 body {
-  background-color: gray;
+  background-color: grey;
+}
+
+hr { 
+  border-color: black;
+}
+
+.w3-opacity {
+  text-shadow: black;
+}
+
+/* NAVBAR STYLING */
+.w3-right a i {
+  color:   rgb(215, 96, 245);
+}
+
+.w3-right {
+  padding-top: 0.8%;
+  font-size: 16px;
 }
 
 /* SEARCH BAR SECTION */
@@ -12,12 +30,20 @@ body {
   display: -webkit-flex;
   width: 70%;
   background: gray;
+}
 
+.hero-search-filter-form-near {
+  border-radius: 25px 0 0 25px;
+}
+
+.button {
+  background-color: black;
+  border-radius: 0 25px 25px 0;
 }
 
 .hero-search-filter-form input,
 .hero-search-filter-form .button {
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 
 .navbar-logo {
@@ -84,6 +110,58 @@ body {
  background-color: rgb(152, 116, 158);
 }
 
+.search-image {
+  padding: 15px;
+  align-items: center;
+  margin-top: 8%;
+}
+
+.search-name {
+text-align: center;
+font-weight: bold;
+font-size: 40px;
+margin-top: -30%;
+margin-left: 6%;
+}
+
+.search-website {
+    color: rgb(255, 255, 255); 
+    font-size: 16px; 
+    line-height: 16px; 
+    padding: 6px; 
+    border-radius: 10px; 
+   background-color: rgb(152, 116, 158);
+}
+
+.save-button {
+  color: rgb(255, 255, 255); 
+  font-size: 16px; 
+  line-height: 16px; 
+  padding: 6px; 
+  border-radius: 10px; 
+ background-color: rgb(152, 116, 158);
+ margin-bottom: 10%;
+}
+
+.search-summary p {
+  background:  rgb(166, 175, 195);
+  float: center;
+  padding: 5px;
+  margin-top: -14%; 
+  margin-left: 30%;
+}
+
+.search-website {
+  margin-bottom: -80%;
+ 
+}
+
+.rating-container {
+  background:  rgb(166, 175, 195);
+  border-radius: 10px;
+  margin-left: 40%;
+}
+
 /* SCROLL BAR FOR IMG RESULT */
 #resultsList {
   display: flex;
@@ -98,73 +176,14 @@ body {
   transform: scale(1.1);
   cursor: pointer;
 }
-/* 
-@media only screen and (max-width: 980px) {
 
-  .modal-box {
-    width: 70%;
-    height: 80%;
-  }
-  
-  .search-name {
-    text-align: center;
-    font-weight: bold;
-    font-size: 20px;
-    position: absolute;
-    top: 0;
-    left: 45%;
-    }
-
-    .rating-container {
-      font-size: 12px; 
-    }
+/* SAVE FAVOURITES SECTION */
+.w-100 {
+  border-color: black;
 }
 
-
-@media only screen and (max-width: 768px) {
-  .search-website {
-    top: 218px;
-    left: -35%;
-  }
-
-  .rating-source {
-    font-size: 5px; 
-    opacity: 0;
-  }
-
-  .search-name {
-    font-size: 15px;
-  }
-
-  .search-summary p {
-    font-size: 80%;
-  }
-  
+/* FEATURED SHOW CARDS */
+.callout {
+  border-radius: 10px;
+  box-shadow: 8px 10px rgb(59, 59, 59);
 }
-
-@media only screen and (max-width: 619px) {
-
-.modal-box {
-  
-}
-
-.search-image {
-width: 47%;
-}
-
-.search-website {
-  top: 180px;
-  left: -34%;
-}
-
-.modal-box {
-  height: auto;
-}
-
-.search-summary p {
- font-size: 9px;
-
-}
-}
-
- */

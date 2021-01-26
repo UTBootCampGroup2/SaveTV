@@ -14,15 +14,14 @@ function searchShow(query) {
     }
   })
   .then((jsonData) => {
-    
     // gets specific string from array
     if(jsonData != null){
-      console.log(jsonData);
-      var movieInfoList =  jsonData.map((element) => ({
-        movieId: element.show.id, 
-        movieName: element.show.name, 
-        imgLink: element.show.image.medium
-      }));
+      // console.log(jsonData);
+        var movieInfoList =  jsonData.map((element) => ({
+          movieId:   element.show.id    ? element.show.id : 0, 
+          movieName: element.show.name  ? element.show.name : "", 
+          imgLink:   element.show.image ? element.show.image.medium : ""
+        }));
     }
     renderResults(movieInfoList);
       
@@ -82,6 +81,9 @@ window.onload = () => {
   searchField.onkeyup = (event) => {
       clearTimeout(searchTimeout);
       if(searchField.value.trim().length === 0) {
+        while (resultsList.firstChild) {
+          resultsList.removeChild(resultsList.firstChild);
+        }
           return;
       }
       searchTimeout = setTimeout(() => {
