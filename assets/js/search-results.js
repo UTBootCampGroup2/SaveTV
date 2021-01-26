@@ -18,13 +18,13 @@ var searchSubmitHandler = function(event) {
     // get value from input element
     var seriesName = searchInputEl.value.trim();
     if (seriesName) {
-      // call function to display modal
+      // call function in search-auto-fill.js to display modal
       displayModal(seriesName);
       // clear old content from search input
       searchInputEl.value = '';
     } 
     else {
-      //alert('Please enter a TV show');
+      // show there is no input value in search bar
       searchInputEl.removeAttribute('placeholder');
       searchInputEl.setAttribute('placeholder', 'please enter a TV show');
     }
@@ -43,8 +43,6 @@ var getSeries = function(seriesName) {
       if (response.ok) {
         response.json().then(function(data) {
           displaySeriesdata(data);
-          // console.log(data);
-
         });
       } 
       else {
@@ -157,8 +155,7 @@ var displaySeriesdata = function(series) {
         seriesDataEl.appendChild(saveButtonEl);
       }
     }
-    //display status and button for "ended" shows
-    // donot display schedule, network
+    //display status and button for "ended" shows ; donot display schedule and network
     else {
       var statusEl = document.createElement('p');
       statusEl.className = ('search-status')
