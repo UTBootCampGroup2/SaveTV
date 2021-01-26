@@ -1,6 +1,6 @@
 # SaveTv
 
-A brief yet descriptive summary of the content within SaveTv.
+
 
 
 <!-- ABOUT SAVETV -->
@@ -11,6 +11,7 @@ A brief yet descriptive summary of the content within SaveTv.
 * SaveTv is an application that allows you to search for random and sponsored Tv content.
 * SaveTv also provides the user with a responsive, easy to navigate way to search up your favorite shows at any time. 
 
+<!-- FEATURED SECTION -->
 ### Featured Section
 
 * The featured section displays Tv shows that are currently being broadcasted, as well as shows that __have__ been and __will__ be broadcasted.
@@ -18,13 +19,8 @@ A brief yet descriptive summary of the content within SaveTv.
 * Use this to find out other highly rated and related shows.
 * Finally, don't forget to use the one-click composed reminder schedule for upcoming show times, which will allow you to be kept up-to-date on all of your favorite shows!
 
+<!-- LANGUAGES USED -->
 ### Built With
-
-This section lists some of the the basic languages used within SaveTv
-
-* [JavaScript](https://javascript.com)
-* [HTML](https://html.com)
-* [CSS](https://css.com)
 
 Here are some of the more advanced languages used within SaveTv
 
