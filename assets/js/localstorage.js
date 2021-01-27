@@ -120,11 +120,11 @@ var localStorageCall = function(apiUrl, seriesName) {
                     window.location.reload();
                 });
             } else {
-                alert('Error: ' + response.statusText);
+                console.log('Error: ' + response.statusText);
             }
         })
     .catch(function(error) {
-        alert('Unable to connect From Local storage');
+        console.log('Unable to connect From Local storage');
     });
 }
 
@@ -224,11 +224,11 @@ var addFavHandlerLocalStorage = function(url){
                 pushtoFavArray(data.name, data.url, data.image.medium);
             });
         } else {
-            alert('Error: ' + response.statusText);
+            console.log('Error: ' + response.statusText);
         }
     })
     .catch(function(error) {
-        alert('Unable to connect From Local storage');
+        console.log('Unable to connect From Local storage');
     });
 }
 
