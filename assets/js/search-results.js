@@ -155,7 +155,10 @@ var displaySeriesdata = function(series) {
         seriesDataEl.appendChild(saveButtonEl);
       }
     }
+  
+    // donot display schedule, network
     //display status and button for "ended" shows ; donot display schedule and network
+
     else {
       var statusEl = document.createElement('p');
       statusEl.className = ('search-status')
