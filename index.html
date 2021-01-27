@@ -35,18 +35,27 @@ href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.c
 <!-- NAVBAR -->
 <div class="w3-top">
   <div class="w3-bar w3-black w3-wide w3-padding w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="#home" class="w3-bar-item w3"><img src="https://i.imgur.com/16Nal0G.gif" class="navbar-logo"/></a>
     <a href="#home" class="w3-bar-item w3-button"></a>
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right">
-      <a href="#home" class="w3-bar-item w3-button"><i class="fa fa-home"></i></i>Home</a>
-      <a href="#about-us" class="w3-bar-item w3-button"><i class="fa fa-user"></i>About</a>
-      <a href="#my-favs" class="w3-bar-item w3-button"><i class="fa fa-heart"></i></i>Favourites</a>
-      <a href="#search-show" class="w3-bar-item w3-button"><i class="fa fa-search"></i></i>Search</a>
-      <a href="#featured-shows" class="w3-bar-item w3-button"><i class="fa fa-th"></i>Featured</a>
-      <a href="#contact-us" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i>Contact</a>
+      <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-home"></i></i>Home</a>
+      <a href="#about-us" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-user"></i>About</a>
+      <a href="#my-favs" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-heart"></i></i>Favourites</a>
+      <a href="#search-show" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-search"></i></i>Search</a>
+      <a href="#featured-shows" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-th"></i>Featured</a>
+      <a href="#contact-us" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-envelope"></i>Contact</a>
     </div>
   </div>
+</div>
+
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="#about-us" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">About</a>
+  <a href="#my-favs" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Favourites</a>
+  <a href="#search-show" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Search</a>
+  <a href="#featured-shows" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Featured</a>
+  <a href="#contact-us" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Contact</a>
 </div>
 
 <br>
@@ -289,6 +298,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.c
 <script src="./assets/js/search-auto-fill.js"></script>
 <script src="./assets/js/localstorage.js"></script>
 <script src="./assets/js/featured-shows.js"></script>
+<script src="./assets/js/navbar.js"></script>
 <script>
   $(document).foundation();
 </script>
