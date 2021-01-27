@@ -36,7 +36,7 @@ var getSeries = function(seriesName) {
     while (resultContainerEl.firstChild) {
       resultContainerEl.removeChild(resultContainerEl.firstChild);
     }
-    var apiUrl = "http://api.tvmaze.com/singlesearch/shows?q=" + seriesName;
+    var apiUrl = "https://api.tvmaze.com/singlesearch/shows?q=" + seriesName;
     fetch(apiUrl)
     .then(function(response) {
       // request was successful
@@ -196,7 +196,7 @@ var displaySeriesdata = function(series) {
 // Function for getting rating
 var seriesRating = function(id) {
 
-    var apiUrl = "http://www.omdbapi.com/?i=" + id + "&apikey=8f19b7dc";
+    var apiUrl = "https://www.omdbapi.com/?i=" + id + "&apikey=8f19b7dc";
 
     fetch(apiUrl)
     .then(function(response) {

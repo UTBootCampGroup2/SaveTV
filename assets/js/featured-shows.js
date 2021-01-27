@@ -34,7 +34,7 @@ var featuredShowName5 = null;
 // function to fetch shows for the day
 var todaysShows = function () {
 
-    var apiUrl = "http://api.tvmaze.com/schedule?country=US&date=" + date;
+    var apiUrl = "https://api.tvmaze.com/schedule?country=US&date=" + date;
     fetch(apiUrl)
     .then(function(response) {
       // request was successful
