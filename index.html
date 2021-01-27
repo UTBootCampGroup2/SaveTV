@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="icon" href="./assets/images/logo-icon.jpg">
+    <title>SaveTV</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- FOUNDATION -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
+    <!-- MOTION UI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.css">
+    <!--  FONT AWESOME -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.tutorialjinni.com/foundation/6.6.1/css/foundation.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css"/>
+    <!--CSS  -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+  </head>
+  
+  <body>
+
+    <!-- NAVBAR -->
+    <div class="w3-top">
+      <div class="w3-bar w3-black w3-wide w3-padding w3-card">
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="#home" class="w3-bar-item w3"><img src="https://i.imgur.com/16Nal0G.gif" class="navbar-logo"/></a>
+        <a href="#home" class="w3-bar-item w3-button"></a>
+        <!-- Float links to the right. Hide them on small screens -->
+        <div class="w3-right">
+          <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-home"></i></i>Home</a>
+          <a href="#about-us" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-user"></i>About</a>
+          <a href="#my-favs" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-heart"></i></i>My Shows</a>
+          <a href="#search-show" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-search"></i></i>Search</a>
+          <a href="#featured-shows" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-th"></i>Featured</a>
+          <a href="#contact-us" class="w3-bar-item w3-button w3-padding-large w3-hide-small"><i class="fa fa-envelope"></i>Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+      <a href="#about-us" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">About</a>
+      <a href="#my-favs" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Favourites</a>
+      <a href="#search-show" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Search</a>
+      <a href="#featured-shows" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Featured</a>
+      <a href="#contact-us" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Contact</a>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- PAGE CONTENT -->
+    <div class="w3-content w3-padding" style="max-width:1564px">
+      <!-- CAROUSEL -->
+      <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
+        <ul class="orbit-container">
+          <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+          <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+          <li class="is-active orbit-slide">
+            <img class="orbit-image" src="./assets/images/two.jpg" alt="Space">
+          </li>
+          <li class="orbit-slide">
+            <img class="orbit-image" src="./assets/images/three.jpg" alt="Space">
+          </li>
+          <li class="orbit-slide">
+            <img class="orbit-image" src="./assets/images/four.jpg" alt="Space">
+          </li>
+          <li class="orbit-slide">
+            <img class="orbit-image" src="./assets/images/six.jpg" alt="Space">
+          </li>
+        </ul>
+        
+        <nav class="orbit-bullets">
+          <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
+          <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+          <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
+          <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
+        </nav>
+      </div>  
+      <br>
+      <br>
+
+      <!-- SEARCH SHOW SECTION -->
+      <section id="search-show">
+        <!--SEARCH BAR -->
+        <div class="hero-search-filter-content">
+          <form class="hero-search-filter-form" action="">
+            <input id="findlocate" class="hero-search-filter-form-near" type="text" placeholder= "search for your favourite show" />
+            <button class="button"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+        
+        <!--MOVIE SEARCH CONTAINER-->
+        <div class="container">
+          <!--shows errors in html page-->
+          <div id="errorMessage"></div>   
+          <!--Displays vertical slide of movie posters-->
+          <section id="resultsList"></section>
+        </div>
+        <br>
+        <br>          
+        <!--MODEL BOX-->
+        <div class="modal-box">
+           <!--modal exit button-->
+           <button class="quit float-right"><i class="fi-x"></i></button>
+        </div>
+        <!-- SEARCH HISTORY DIV --> 
+        <div id="my-favs" class="text-center">
+          <h2>My Favourites</h2>
+          <p><i>SAVE YOUR FAVOURITE SHOWS HERE</i></p>
+        </div>
+        <div class="row">
+          <div class="col-md-12 h-100 pb-3" id="search-history-container">
+            <div id="my-favs" class="text-center">
+              <h2>My Watchlist</h2>
+              <p><i>SAVE YOUR WATCHLISTS HERE</i></p>
+            </div>
+            <div class="card w-100">
+              <ul id="search-history" class="accordion" data-accordion data-allow-all-closed="true"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <br>
+      <br>
+      
+      <!-- FEATURED SHOWS -->
+      <div id="featured-shows" class="text-center">
+        <h2>Featured Shows</h2>
+        <hr>
+      </div>
+      <!-- FEATURED SHOWS GRID -->
+      <div class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-6">
+        <div class="cell">
+          <div class="callout">
+            <p><a id="web0" target="_blank" href=""><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B" id="image0"> </a> </p>
+            <a class="lead" id="details0">Find Out More!</a>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="callout">
+            <p><a id="web1" target="_blank" href=""><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B" id="image1"> </a> </p>
+            <a class="lead" id="details1">Find Out More!</a>
+          </div> 
+        </div>
+        <div class="cell">
+          <div class="callout">
+            <p><a id="web2" target="_blank" href=""><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B" id="image2"> </a> </p>
+            <a class="lead" id="details2">Find Out More!</a>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="callout">
+            <p><a id="web3" target="_blank" href=""><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B" id="image3"> </a> </p>
+            <a class="lead" id="details3">Find Out More!</a>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="callout">
+            <p><a id="web4" target="_blank" href=""><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B" id="image4"> </a> </p>
+            <a class="lead" id="details4">Find Out More!</a>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="callout">
+            <p><a id="web5" target="_blank" href=""><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B" id="image5"> </a> </p>
+            <a class="lead" id="details5">Find Out More!</a>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+
+      <!-- ABOUT US SECTION -->
+      <div id="about-us" class="text-center">
+        <h2>About Us</h2>
+          <p><i>WE KNOW HOW MUCH YOU LOVE TV SHOWS</i></p>
+        <hr>
+      </div>
+      <p class="w3-justify">Let's face it: 2020 sucked in an unprecedented way, by every single measure known to mankind, except one—television! 
+          With nowhere to go and nothing better to do, we've had little choice but to rely on the TV gods to entertain us! 
+          SaveTV is your go-to when it comes to finding out the schedule and rating of your favourite show. 
+          With more and more ways of viewing TV available, we now have access to a plethora of good quality and TV shows. 
+          Just search for your favourite show on our website and you'll be able to see a description, the shows website, the status of the show (ongoing or ended) and 
+          most important the rating of the show!
+          SaveTv also provides the user with a responsive, easy to navigate way to search up your favorite shows at any time. 
+          The Featured Shows section displays Tv shows that are currently being broadcasted, as well as shows that have been and will be broadcasted.
+      </p>
+      <div class="w3-center w3-row w3-padding-32">
+        <h4>Meet The Team!!</h4>
+        <div class="w3-third">
+          <p><i>Brandon</i></p>
+          <img src="./assets/images/brandon.png" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+        </div>
+   
+        <div class="w3-third">
+          <p><i>Rose</i></p>
+          <img src="./assets/images/rose.JPG" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+        </div>
+    
+        <div class="w3-third">
+          <p><i>Benn</i></p>
+          <img src="./assets/images/benn.JPG" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+        </div>
+        <br>
+    
+        <div class="w3-third">
+          <p><i>Brian</i></p>
+          <img src="./assets/images/brian.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+        </div>
+ 
+        <div class="w3-third">
+          <p><i>Fazle</i></p>
+          <img src="./assets/images/fazle.jpg" class="w3-round" alt="Random Name" style="width:60%">
+        </div>
+      
+        <div class="w3-third">
+          <p><i>Taylor</i></p>
+          <img src="./assets/images/1.jpg" class="w3-round" alt="Random Name" style="width:60%">
+        </div>
+    
+      </div>    
+      
+      <!-- Contact Section -->
+      <div id="contact-us" class="text-center">
+        <h2>Contact Us</h2>
+        <hr>
+      </div>
+
+      <div class="w3-container w3-padding-large w3-grey">
+        <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
+          <div class="w3-third w3-dark-grey">
+            <br>
+            <p><i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i></p>
+            <p>UTBootCamp.Group2@gmail.com</p>
+          </div>
+          <div class="w3-third w3-black">
+            <br>
+            <p><i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i></p>
+            <p>Toronto, ON</p>
+          </div>
+          <div class="w3-third w3-dark-grey">
+            <br>
+            <p><i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i></p>
+            <p>512312311</p>
+          </div>
+        </div>
+      </div>  
+      
+    </div>
+    <!-- END PAGE CONTENT -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <script src ="https://cdn.tutorialjinni.com/foundation/6.6.1/js/plugins/foundation.core.min.js"></script>
+    <script src="https://cdn.tutorialjinni.com/foundation/6.6.1/js/plugins/foundation.accordion.min.js"></script>
+    <script src="https://cdn.tutorialjinni.com/foundation/6.6.1/js/plugins/foundation.util.mediaQuery.min.js"></script>
+    <script src="https://cdn.tutorialjinni.com/foundation/6.6.1/js/plugins/foundation.reveal.min.js"></script>
+    <script src="https://cdn.tutorialjinni.com/foundation/6.6.1/js/plugins/foundation.util.touch.min.js"></script>
+    <script src="https://cdn.tutorialjinni.com/foundation/6.6.1/js/plugins/foundation.util.triggers.min.js"></script>
+    <script src="https://cdn.tutorialjinni.com/foundation/6.6.1/js/plugins/foundation.util.motion.min.js"></script>
+    <script src="https://cdn.tutorialjinni.com/foundation/6.6.1/js/plugins/foundation.util.keyboard.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+    <script src="./assets/js/search-results.js"></script>
+    <script src="./assets/js/search-auto-fill.js"></script>
+    <script src="./assets/js/localstorage.js"></script>
+    <script src="./assets/js/featured-shows.js"></script>
+    <script src="./assets/js/navbar.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+
+
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-16">
+      <p>Powered by <a href="https://github.com/UTBootCampGroup2/project-1" title="" target="_blank" class="w3-hover-text-green">SAVETV</a></p>
+    </footer>
+
+  </body>
+</html>
