@@ -224,6 +224,7 @@ var seriesRating = function(id) {
 };
 
 // Function to display rating
+/*
 var displayRating = function(rating) {
   //if (rating.Ratings[0] != null) {
   //if(rating.Response != "False"){
@@ -250,6 +251,33 @@ var displayRating = function(rating) {
     }
   }
 };
+*/
+// Function to display rating
+var displayRating = function(rating) {
+  var ratingScore = 'Not available';
+  var ratingSource = 'IMDb'
+  if(rating.Response != "False"){
+    ratingScore = rating.Ratings[0].Value;
+    ratingSource = rating.Ratings[0].Source;
+  }
+  var ratingContainerEl = document.createElement('div');
+  ratingContainerEl.className = 'rating-container';
+  ratingContainerEl.setAttribute('id', 'rating-container');
+  resultContainerEl.appendChild(ratingContainerEl);
+  // display rating score
+  var ratingEl = document.createElement('p');
+  ratingEl.className = 'rating-score';
+  ratingEl.setAttribute('id', 'rating-score');
+  ratingEl.textContent = ratingScore;
+  ratingContainerEl.appendChild(ratingEl);
+  // display rating source
+  var sourceEl = document.createElement('span');
+  sourceEl.className = 'rating-source';
+  sourceEl.setAttribute('id', 'rating-source');
+  sourceEl.textContent = " Source: " + ratingSource;
+  ratingEl.appendChild(sourceEl);
+};
+
 
 // add event listener for search
 searchFormEl.addEventListener('submit', searchSubmitHandler);
