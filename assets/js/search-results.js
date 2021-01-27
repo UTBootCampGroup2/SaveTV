@@ -43,7 +43,7 @@ var getSeries = function(seriesName) {
       if (response.ok) {
         response.json().then(function(data) {
           displaySeriesdata(data);
-          // console.log(data);
+    
 
         });
       } 
@@ -59,9 +59,6 @@ var getSeries = function(seriesName) {
 // Function for displaying the serached series information
 var displaySeriesdata = function(series) {
 
-  // console.log(nexEpisodeUrl); 
-  // return;
-  
   if(series != null){
 
     // create section for holding series data
@@ -142,6 +139,8 @@ var displaySeriesdata = function(series) {
         saveButtonEl.setAttribute('type', 'button');
         saveButtonEl.innerHTML = "<i class='fa fa-search'></i>"
         saveButtonEl.textContent = "Add to Watch List";
+        var res = nexEpisodeUrl.split("http");
+        nexEpisodeUrl = 'https' + res[1];
         // call function in localstorage.js when save button is clicked
         saveButtonEl.setAttribute('onclick', 'saveBtnHandlerLocalStorage("' + nexEpisodeUrl + '", ' + '"' + seriesName + '")');
         seriesDataEl.appendChild(saveButtonEl); 
@@ -162,7 +161,7 @@ var displaySeriesdata = function(series) {
     }
     //display status and button for "ended" shows
     // donot display schedule, network
-    else if(series.status === "Ended") {
+    else {
       var statusEl = document.createElement('p');
       statusEl.className = ('search-status')
       statusEl.setAttribute("id", 'search-status');
