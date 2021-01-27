@@ -130,7 +130,7 @@ var displaySeriesdata = function(series) {
 
       // Create ""Add to Watch List" button for "running" and "next episode doesnt exist" shows
       if (typeof(series._links.nextepisode) !== 'undefined') {
-        var nexEpisodeUrl = series._links.nextepisode.href;
+        
         var seriesName = series.name;
         // display "Add to Watch List" save button
         var saveButtonEl = document.createElement('button');
@@ -139,6 +139,8 @@ var displaySeriesdata = function(series) {
         saveButtonEl.setAttribute('type', 'button');
         saveButtonEl.innerHTML = "<i class='fa fa-search'></i>"
         saveButtonEl.textContent = "Add to Watch List";
+
+        var nexEpisodeUrl = series._links.nextepisode.href;
         var res = nexEpisodeUrl.split("http");
         nexEpisodeUrl = 'https' + res[1];
         // call function in localstorage.js when save button is clicked
@@ -154,6 +156,10 @@ var displaySeriesdata = function(series) {
         saveButtonEl.setAttribute('type', 'button');
         saveButtonEl.innerHTML = "<i class='fa fa-search'></i>"
         saveButtonEl.textContent = "Add To Favourite";
+
+        var nexEpisodeUrl = series._links.nextepisode.href;
+        var res = nexEpisodeUrl.split("http");
+        nexEpisodeUrl = 'https' + res[1];
         // call function in localstorage.js when save button is clicked
         saveButtonEl.setAttribute('onclick', 'addFavHandlerLocalStorage("' + series._links.self.href + '")');
         seriesDataEl.appendChild(saveButtonEl);
@@ -175,6 +181,10 @@ var displaySeriesdata = function(series) {
       saveButtonEl.setAttribute('type', 'button');
       saveButtonEl.innerHTML = "<i class='fa fa-search'></i>"
       saveButtonEl.textContent = "Add To Favourite";
+
+      var nexEpisodeUrl = series._links.nextepisode.href;
+      var res = nexEpisodeUrl.split("http");
+      nexEpisodeUrl = 'https' + res[1];
       // call function in localstorage.js when save button is clicked
       saveButtonEl.setAttribute('onclick', 'addFavHandlerLocalStorage("' + series._links.self.href + '")');
       seriesDataEl.appendChild(saveButtonEl);
