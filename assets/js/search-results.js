@@ -43,6 +43,8 @@ var getSeries = function(seriesName) {
       if (response.ok) {
         response.json().then(function(data) {
           displaySeriesdata(data);
+          // console.log(data);
+
         });
       } 
       else {
@@ -57,7 +59,10 @@ var getSeries = function(seriesName) {
 // Function for displaying the serached series information
 var displaySeriesdata = function(series) {
 
-  if(series != null) {
+  // console.log(nexEpisodeUrl); 
+  // return;
+  
+  if(series != null){
 
     // create section for holding series data
     var seriesDataEl = document.createElement('div');
@@ -155,11 +160,9 @@ var displaySeriesdata = function(series) {
         seriesDataEl.appendChild(saveButtonEl);
       }
     }
-  
+    //display status and button for "ended" shows
     // donot display schedule, network
-    //display status and button for "ended" shows ; donot display schedule and network
-
-    else {
+    else if(series.status === "Ended") {
       var statusEl = document.createElement('p');
       statusEl.className = ('search-status')
       statusEl.setAttribute("id", 'search-status');

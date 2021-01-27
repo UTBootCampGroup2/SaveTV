@@ -27,7 +27,7 @@ function searchShow(query) {
       
   })
   .catch((error) => {
-      console.log('error', error);
+      //console.log('error', error);
   });
 }
 var resultsList = document.getElementById("resultsList");
@@ -35,12 +35,12 @@ resultsList.onclick = function (event) {
   event.preventDefault();
   var target = event.target;
   if (target.tagName.toLowerCase() === 'img') {
-      console.log("img click test") //works
-      console.log('event', event);
+      // console.log("img click test") //works
+      // console.log('event', event);
       var movieId = target.id;
-      console.log(movieId);
+      // console.log(movieId);
       var movieName = target.name;
-      console.log("movie name", movieName);
+      // console.log("movie name", movieName);
       displayModal(movieName);
   }
 }
@@ -87,7 +87,7 @@ window.onload = () => {
           return;
       }
       searchTimeout = setTimeout(() => {
-        console.log(searchField.value.trim());
+        // console.log(searchField.value.trim());
           searchShow(searchField.value.trim());
       }, 250);
       
