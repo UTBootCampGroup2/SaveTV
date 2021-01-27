@@ -198,3 +198,17 @@ hr {
   justify-content: center;
   align-content: center;
 }
+
+/* MEET THE TEAM SECTION */
+
+.w3-third img {
+  width: 280px;
+  height: 280px;
+  box-shadow: 8px 10px rgb(59, 59, 59);
+
+}
+
+.w3-third p {
+  font-size: 15px;
+  font-weight: bold;
+}
