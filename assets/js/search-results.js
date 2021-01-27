@@ -18,13 +18,15 @@ var searchSubmitHandler = function(event) {
     // get value from input element
     var seriesName = searchInputEl.value.trim();
     if (seriesName) {
-      // call function to display modal
+      // call function in search-auto-fill.js to display modal
       displayModal(seriesName);
       // clear old content from search input
       searchInputEl.value = '';
     } 
     else {
-      alert('Please enter a TV show');
+      // show there is no input value in search bar
+      searchInputEl.removeAttribute('placeholder');
+      searchInputEl.setAttribute('placeholder', 'please enter a TV show');
     }
 };
 
@@ -46,11 +48,11 @@ var getSeries = function(seriesName) {
         });
       } 
       else {
-        alert('Error: ' + response.statusText);
+        console.log('Error: ' + response.statusText);
       }
     })
     .catch(function(error) {
-      alert('Unable to connect');
+      console.log('Unable to connect');
     });
 };
 
@@ -78,20 +80,24 @@ var displaySeriesdata = function(series) {
     }
     
     // display name of the series
-    var nameEl = document.createElement('p');
-    nameEl.className = ('search-name')
-    nameEl.setAttribute("id", 'search-name');
-    nameEl.textContent = series.name;
-    seriesDataEl.appendChild(nameEl);
+    if(series.name != null) {
+      var nameEl = document.createElement('p');
+      nameEl.className = ('search-name')
+      nameEl.setAttribute("id", 'search-name');
+      nameEl.textContent = series.name;
+      seriesDataEl.appendChild(nameEl);
+    }
 
     // display website
-    var websiteEl = document.createElement('a');
-    websiteEl.textContent = "Visit Website";
-    websiteEl.className = ('search-website')
-    websiteEl.setAttribute("id", 'search-website');
-    websiteEl.setAttribute("href", series.officialSite);
-    websiteEl.setAttribute("target", '_blank');
-    seriesDataEl.appendChild(websiteEl);
+    if(series.officialSite != null) {
+      var websiteEl = document.createElement('a');
+      websiteEl.textContent = "Visit Website";
+      websiteEl.className = ('search-website')
+      websiteEl.setAttribute("id", 'search-website');
+      websiteEl.setAttribute("href", series.officialSite);
+      websiteEl.setAttribute("target", '_blank');
+      seriesDataEl.appendChild(websiteEl);
+    }
 
     // display schedule, savebutton and network or webchannel if show is running
     if(series.status === "Running") {
@@ -113,14 +119,16 @@ var displaySeriesdata = function(series) {
       }
 
       // display schedule
-      var showDays = [];
-      var showDays = series.schedule.days;
-      for(var i=0; i <showDays.length; i ++) {
-        var scheduleEl = document.createElement('p');
-        scheduleEl.className = ('search-schedule')
-        scheduleEl.setAttribute("id", 'search-schedule');
-        scheduleEl.textContent = series.schedule.time + " "+ showDays[i];
-        seriesDataEl.appendChild(scheduleEl);
+      if(series.schedule.time != null) {
+        var showDays = [];
+        var showDays = series.schedule.days;
+        for(var i=0; i <showDays.length; i ++) {
+          var scheduleEl = document.createElement('p');
+          scheduleEl.className = ('search-schedule')
+          scheduleEl.setAttribute("id", 'search-schedule');
+          scheduleEl.textContent = series.schedule.time + " "+ showDays[i];
+          seriesDataEl.appendChild(scheduleEl);
+        }
       }
 
       // Create ""Add to Watch List" button for "running" and "next episode doesnt exist" shows
@@ -198,17 +206,17 @@ var seriesRating = function(id) {
             displayRating(data);
         });
         } else {
-        alert('Error: ' + response.statusText);
+        console.log('Error: ' + response.statusText);
         }
     })
     .catch(function(error) {
-        alert('Unable to connect');
+        console.log('Unable to connect');
     });
 };
 
 // Function to display rating
 var displayRating = function(rating) {
-
+  if (rating.Ratings[0] != null) {
     var ratingContainerEl = document.createElement('div');
     ratingContainerEl.className = 'rating-container';
     ratingContainerEl.setAttribute('id', 'rating-container');
@@ -220,14 +228,14 @@ var displayRating = function(rating) {
     ratingEl.setAttribute('id', 'rating-score');
     ratingEl.textContent = rating.Ratings[0].Value;
     ratingContainerEl.appendChild(ratingEl);
-  
+    
     // display rating source
     var sourceEl = document.createElement('span');
     sourceEl.className = 'rating-source';
     sourceEl.setAttribute('id', 'rating-source');
     sourceEl.textContent = " Source: " + rating.Ratings[0].Source;
     ratingEl.appendChild(sourceEl);
-  
+  }
 };
 
 // add event listener for search

@@ -55,7 +55,7 @@ function renderResults(movieInfoList) {
 }
 function showImage(movieInfo) {
   // creates img
-  // console.log(movieInfo);
+  console.log(movieInfo);
   var img = document.createElement("img");
   img.id = movieInfo.movieId;
   img.name = movieInfo.movieName;
