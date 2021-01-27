@@ -8,7 +8,7 @@ var localStorageObj = {};
 var localStorageName = 'group2-SaveTv-items';
 
 // get html element to print calendar:
-var localUlElement = document.querySelector("ul", "#search-history");
+var localUlElement = document.querySelector(".accordion");
 
 var localFavDiv = document.getElementById("my-favs");  
 
