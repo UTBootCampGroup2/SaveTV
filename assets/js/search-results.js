@@ -157,11 +157,11 @@ var displaySeriesdata = function(series) {
         saveButtonEl.innerHTML = "<i class='fa fa-search'></i>"
         saveButtonEl.textContent = "Add To Favourite";
 
-        var nexEpisodeUrl = series._links.nextepisode.href;
-        var res = nexEpisodeUrl.split("http");
-        nexEpisodeUrl = 'https' + res[1];
+        var selfUrl = series._links.self.href;
+        var res = selfUrl.split("http");
+        selfUrl = 'https' + res[1];
         // call function in localstorage.js when save button is clicked
-        saveButtonEl.setAttribute('onclick', 'addFavHandlerLocalStorage("' + nexEpisodeUrl + '")');
+        saveButtonEl.setAttribute('onclick', 'addFavHandlerLocalStorage("' + selfUrl + '")');
         seriesDataEl.appendChild(saveButtonEl);
       }
     }
@@ -182,11 +182,11 @@ var displaySeriesdata = function(series) {
       saveButtonEl.innerHTML = "<i class='fa fa-search'></i>"
       saveButtonEl.textContent = "Add To Favourite";
 
-      var nexEpisodeUrl = series._links.nextepisode.href;
-      var res = nexEpisodeUrl.split("http");
-      nexEpisodeUrl = 'https' + res[1];
+      var selfUrl = series._links.self.href;
+      var res = selfUrl.split("http");
+      selfUrl = 'https' + res[1];
       // call function in localstorage.js when save button is clicked
-      saveButtonEl.setAttribute('onclick', 'addFavHandlerLocalStorage("' + nexEpisodeUrl + '")');
+      saveButtonEl.setAttribute('onclick', 'addFavHandlerLocalStorage("' + selfUrl + '")');
       seriesDataEl.appendChild(saveButtonEl);
     }
 
