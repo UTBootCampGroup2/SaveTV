@@ -161,7 +161,7 @@ var displaySeriesdata = function(series) {
         var res = nexEpisodeUrl.split("http");
         nexEpisodeUrl = 'https' + res[1];
         // call function in localstorage.js when save button is clicked
-        saveButtonEl.setAttribute('onclick', 'addFavHandlerLocalStorage("' + series._links.self.href + '")');
+        saveButtonEl.setAttribute('onclick', 'addFavHandlerLocalStorage("' + nexEpisodeUrl + '")');
         seriesDataEl.appendChild(saveButtonEl);
       }
     }
@@ -186,7 +186,7 @@ var displaySeriesdata = function(series) {
       var res = nexEpisodeUrl.split("http");
       nexEpisodeUrl = 'https' + res[1];
       // call function in localstorage.js when save button is clicked
-      saveButtonEl.setAttribute('onclick', 'addFavHandlerLocalStorage("' + series._links.self.href + '")');
+      saveButtonEl.setAttribute('onclick', 'addFavHandlerLocalStorage("' + nexEpisodeUrl + '")');
       seriesDataEl.appendChild(saveButtonEl);
     }
 
