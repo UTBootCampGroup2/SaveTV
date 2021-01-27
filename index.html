@@ -3,6 +3,7 @@
 <html>
 
 <head>
+<link rel="icon" href="./assets/images/logo-icon.jpg">
 <title>SaveTV</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,17 +56,42 @@ href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.c
 
 <!-- PAGE CONTENT -->
 <div class="w3-content w3-padding" style="max-width:1564px">      
+    
+  <!-- CAROUSEL -->
+  <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
+    <ul class="orbit-container">
+      
+      <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+      <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+      <li class="is-active orbit-slide">
+        <img class="orbit-image" src="./assets/images/two.jpg" alt="Space">
+      </li>
+      <li class="orbit-slide">
+        <img class="orbit-image" src="./assets/images/three.jpg" alt="Space">
+      </li>
+      <li class="orbit-slide">
+        <img class="orbit-image" src="./assets/images/four.jpg" alt="Space">
+      </li>
+      <li class="orbit-slide">
+        <img class="orbit-image" src="./assets/images/six.jpg" alt="Space">
+      </li>
+    </ul>
+    
+    <nav class="orbit-bullets">
+      <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
+      <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+      <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
+      <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
+    </nav>
+  </div>  
 
-<!-- SEARCH SHOW SECTION -->
+  <!-- SEARCH SHOW SECTION -->
   <section id="search-show">
-    <div class="text-center">
-      <h2>Search For Your Favourite Show</h2>
-      <hr>
-    </div>
+
     <!--SEARCH BAR -->
     <div class="hero-search-filter-content">
       <form class="hero-search-filter-form" action="">
-        <input id="findlocate" class="hero-search-filter-form-near" type="text" />
+        <input id="findlocate" class="hero-search-filter-form-near" type="text" placeholder= "search for your favourite show" />
         <button class="button"><i class="fa fa-search"></i></button>
       </form>
     </div>
@@ -109,102 +135,72 @@ href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.c
           </div>
   </section>
 
-    <br>
-    <br>
-
-  <!-- CAROUSEL -->
-  <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
-    <ul class="orbit-container">
-      
-      <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-      <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-      <li class="is-active orbit-slide">
-        
-        <img class="orbit-image" src="./assets/images/one.jpg" alt="Space">
-        <figcaption class="orbit-caption">THE BIG BANG THEORY</figcaption>
-      </li>
-      <li class="orbit-slide">
-        <img class="orbit-image" src="./assets/images/six.jpg" alt="Space">
-        <figcaption class="orbit-caption">GREEN ARROW</figcaption>
-      </li>
-      <li class="orbit-slide">
-        <img class="orbit-image" src="./assets/images/three.jpg" alt="Space">
-        <figcaption class="orbit-caption">SALEM</figcaption>
-      </li>
-      <li class="orbit-slide">
-        <img class="orbit-image" src="./assets/images/two.jpg" alt="Space">
-        <figcaption class="orbit-caption">GOTHAM</figcaption>
-      </li>
-    </ul>
-    
-    <nav class="orbit-bullets">
-      <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
-      <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
-      <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
-      <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
-    </nav>
-  </div>  
+  <!-- SEARCH HISTORY DIV -->
+  <div id="my-favs" class="text-center">
+    <h2>Favourites</h2>
+    <p><i>SAVE YOUR FAVOURITE SHOWS HERE</i></p>
+    <hr>
+  </div>
+      <div class="row">
+      <div class="col-md-12 h-100 pb-3" id="search-history-container">
+          <div class="card w-100">
+            <ul id="search-history" class="accordion" data-accordion data-allow-all-closed="true">
+          </div>
+      </div>
+    </div>
   
-  
-
-</section>
+  </section>
+  <br>
+  <br>
   
   <!-- FEATURED SHOWS -->
   <div id="featured-shows" class="text-center">
     <h2>Featured Shows</h2>
     <hr>
   </div>
-  <!-- FEATURED SHOWS GRID -->
-  <div class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-3">
-    <div class="cell">
-      <div class="callout">
-        <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B" id="image1"></p>
-        <p class="lead" id="name1">Copernican Revolution caused an uproar</p>
-        <p class="subheader" id="network1">Find Earth-like planets life outside the Solar System</p>
-        <p class="subheader" id="schedule1">Find Earth-like planets life outside the Solar System</p>
-      </div>
-    </div>
-    <div class="cell">
-      <div class="callout">
-        <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B" id="image2"></p>
-        <p class="lead" id="name2">Copernican Revolution caused an uproar</p>
-        <p class="subheader" id="network2">Find Earth-like planets life outside the Solar System</p>
-        <p class="subheader" id="schedule2">Find Earth-like planets life outside the Solar System</p>
-      </div>
-    </div>
-    <div class="cell">
-      <div class="callout">
-        <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B" id="image3"></p>
-        <p class="lead" id="name3">Copernican Revolution caused an uproar</p>
-        <p class="subheader" id="network3">Find Earth-like planets life outside the Solar System</p>
-        <p class="subheader" id="schedule3">Find Earth-like planets life outside the Solar System</p>
-      </div>
-    </div>
-    <div class="cell">
-      <div class="callout">
-        <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B" id="image4"></p>
-        <p class="lead" id="name4">Copernican Revolution caused an uproar</p>
-        <p class="subheader" id="network4">Find Earth-like planets life outside the Solar System</p>
-        <p class="subheader" id="schedule4">Find Earth-like planets life outside the Solar System</p>
-      </div>
-    </div>
-    <div class="cell">
-      <div class="callout">
-        <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B" id="image5"></p>
-        <p class="lead" id="name5">Copernican Revolution caused an uproar</p>
-        <p class="subheader" id="network5">Find Earth-like planets life outside the Solar System</p>
-        <p class="subheader" id="schedule5">Find Earth-like planets life outside the Solar System</p>
-      </div>
-    </div>
-    <div class="cell">
-      <div class="callout">
-        <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B" id="image6"></p>
-        <p class="lead" id="name6">Copernican Revolution caused an uproar</p>
-        <p class="subheader" id="network6">Find Earth-like planets life outside the Solar System</p>
-        <p class="subheader" id="schedule6">Find Earth-like planets life outside the Solar System</p>
-      </div>
+<!-- FEATURED SHOWS GRID -->
+<div class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-6">
+
+  <div class="cell">
+    <div class="callout">
+      <p><a id="web0" target="_blank" href=""><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B" id="image0"> </a> </p>
+      <a class="lead" id="details0">Find Out More!</a>
     </div>
   </div>
+  <div class="cell">
+    <div class="callout">
+      <p><a id="web1" target="_blank" href=""><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B" id="image1"> </a> </p>
+      <a class="lead" id="details1">Find Out More!</a>
+    </div>
+    
+  </div>
+  <div class="cell">
+    <div class="callout">
+      <p><a id="web2" target="_blank" href=""><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B" id="image2"> </a> </p>
+      <a class="lead" id="details2">Find Out More!</a>
+    </div>
+  </div>
+  <div class="cell">
+    <div class="callout">
+      <p><a id="web3" target="_blank" href=""><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B" id="image3"> </a> </p>
+      <a class="lead" id="details3">Find Out More!</a>
+    </div>
+  </div>
+  <div class="cell">
+    <div class="callout">
+      <p><a id="web4" target="_blank" href=""><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B" id="image4"> </a> </p>
+      <a class="lead" id="details4">Find Out More!</a>
+    </div>
+  </div>
+  <div class="cell">
+    <div class="callout">
+      <p><a id="web5" target="_blank" href=""><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B" id="image5"> </a> </p>
+      <a class="lead" id="details5">Find Out More!</a>
+    </div>
+  </div>
+  
+</div>
+<br>
 <br>
 
   <!-- ABOUT US SECTION -->
@@ -216,22 +212,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.c
     <p class="w3-justify">Let's face it: 2020 sucked in an unprecedented way, by every single measure known to mankind, except one—television! 
         With nowhere to go and nothing better to do, we've had little choice but to rely on the TV gods to entertain us! 
         SaveTV is your go-to when it comes to finding out the schedule and rating of your favourite show. 
-        
-        
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-      Exercitationem obcaecati at dolor deserunt nobis ipsum recusandae dolorem? Saepe porro, repudiandae vitae omnis nisi est, 
-      voluptas deleniti corporis quam placeat facere? Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Pariatur doloribus porro minus placeat rerum omnis deleniti, recusandae velit magni quis ratione, 
-      praesentium voluptate reiciendis qui dignissimos enim consequatur cum assumenda.
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-      Exercitationem obcaecati at dolor deserunt nobis ipsum recusandae dolorem? Saepe porro, repudiandae vitae omnis nisi est, 
-      voluptas deleniti corporis quam placeat facere? Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Pariatur doloribus porro minus placeat rerum omnis deleniti, recusandae velit magni quis ratione, 
-      praesentium voluptate reiciendis qui dignissimos enim consequatur cum assumenda.Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-      Exercitationem obcaecati at dolor deserunt nobis ipsum recusandae dolorem? Saepe porro, repudiandae vitae omnis nisi est, 
-      voluptas deleniti corporis quam placeat facere? Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Pariatur doloribus porro minus placeat rerum omnis deleniti, recusandae velit magni quis ratione, 
-      praesentium voluptate reiciendis.
+        With more and more ways of viewing TV available, we now have access to a plethora of good quality and TV shows. 
+        Just search for your favourite show on our website and you'll be able to see a description, the shows website, the status of the show (ongoing or ended) and 
+        most important the rating of the show!
+        SaveTv also provides the user with a responsive, easy to navigate way to search up your favorite shows at any time. 
+        The Featured Shows section displays Tv shows that are currently being broadcasted, as well as shows that have been and will be broadcasted, 
+        depending on which country you are in!
     </p>
   <div class="w3-center w3-row w3-padding-32">
     <h4>Meet The Team!!</h4>
@@ -287,27 +273,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.c
         <p>512312311</p>
       </div>
     </div>
-    
-
-  <div class="w3-container w3-padding-32" id="contact">
-    <form action="/action_page.php" target="_blank">
-      <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-      <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
-      <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
-      <input class="w3-input w3-section w3-border" type="text" placeholder="Comment" required name="Comment">
-      <button class="w3-button w3-black w3-section" type="submit">
-        <i class="fa fa-paper-plane"></i> SEND MESSAGE
-      </button>
-    </form>
-  </div>
+  
 
 </div>
 <!-- END PAGE CONTENT -->
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-
-<script src="./assets/js/search-results.js"></script>
-<script src="./assets/js/search-auto-fill.js"></script>
-<script src="./assets/js/localstorage.js"></script>
 
 <script src ="https://cdn.tutorialjinni.com/foundation/6.6.1/js/plugins/foundation.core.min.js"></script>
 <script src="https://cdn.tutorialjinni.com/foundation/6.6.1/js/plugins/foundation.accordion.min.js"></script>
@@ -320,6 +290,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.c
 <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+<script src="./assets/js/search-results.js"></script>
+<script src="./assets/js/search-auto-fill.js"></script>
+<script src="./assets/js/localstorage.js"></script>
+<script src="./assets/js/featured-shows.js"></script>
 <script>
   $(document).foundation();
 </script>
