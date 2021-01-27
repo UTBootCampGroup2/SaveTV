@@ -202,10 +202,10 @@ hr {
 /* MEET THE TEAM SECTION */
 
 .w3-third img {
-  width: 280px;
-  height: 280px;
-  box-shadow: 8px 10px rgb(59, 59, 59);
-
+  width: 30px;
+  height: 200px;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .w3-third p {
