@@ -204,11 +204,12 @@ hr {
 .w3-third img {
   width: 30px;
   height: 200px;
-  padding-left: 10%;
-  padding-right: 10%;
+  box-shadow: 8px 10px rgb(59, 59, 59);
+
 }
 
 .w3-third p {
   font-size: 15px;
   font-weight: bold;
+  padding-top: 5%;
 }
