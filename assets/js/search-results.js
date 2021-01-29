@@ -4,6 +4,7 @@ var searchShowEl = document.querySelector("#search-show");
 var searchInputEl = document.querySelector('#findlocate');
 var searchFormEl = document.querySelector('.hero-search-filter-form');
 var modalBox = document.querySelector(".modal-box");
+var seriesName = "";
 
 // create search result container
 var resultContainerEl = document.createElement('div');
@@ -16,17 +17,17 @@ var searchSubmitHandler = function(event) {
     // prevent page from refreshing
     event.preventDefault();
     // get value from input element
-    var seriesName = searchInputEl.value.trim();
+    seriesName = searchInputEl.value.trim();
     if (seriesName) {
-      // call function in search-auto-fill.js to display modal
-      displayModal(seriesName);
       // clear old content from search input
       searchInputEl.value = '';
+      // call function to fetch api
+      getSeries(seriesName);
     } 
     else {
       // show there is no input value in search bar
       searchInputEl.removeAttribute('placeholder');
-      searchInputEl.setAttribute('placeholder', 'please enter a TV show');
+      searchInputEl.setAttribute('placeholder', 'Please enter a TV show');
     }
 };
 
@@ -42,13 +43,17 @@ var getSeries = function(seriesName) {
       // request was successful
       if (response.ok) {
         response.json().then(function(data) {
+          // call function in search-auto-fill.js to display modal
+          displayModal();
+          // call function to display show details fetched from tvmaze api
           displaySeriesdata(data);
-    
-
         });
       } 
       else {
         console.log('Error: ' + response.statusText);
+        // display that the entered value is invalid
+        searchInputEl.removeAttribute('placeholder');
+        searchInputEl.setAttribute('placeholder', 'Please enter a valid TV show name');
       }
     })
     .catch(function(error) {
@@ -143,7 +148,7 @@ var displaySeriesdata = function(series) {
         var nexEpisodeUrl = series._links.nextepisode.href;
         var res = nexEpisodeUrl.split("http");
         nexEpisodeUrl = 'https' + res[1];
-        // call function in localstorage.js when save button is clicked
+        // call function in localstorage.js when "Add to Watch List" button is clicked
         saveButtonEl.setAttribute('onclick', 'saveBtnHandlerLocalStorage("' + nexEpisodeUrl + '", ' + '"' + seriesName + '")');
         seriesDataEl.appendChild(saveButtonEl); 
       }
@@ -160,13 +165,12 @@ var displaySeriesdata = function(series) {
         var selfUrl = series._links.self.href;
         var res = selfUrl.split("http");
         selfUrl = 'https' + res[1];
-        // call function in localstorage.js when save button is clicked
+        // call function in localstorage.js when "Add To Favourite" button is clicked
         saveButtonEl.setAttribute('onclick', 'addFavHandlerLocalStorage("' + selfUrl + '")');
         seriesDataEl.appendChild(saveButtonEl);
       }
     }
-    //display status and button for "ended" shows
-    // donot display schedule, network
+    //display status and button for "ended" shows; schedule and network is not required in this case
     else {
       var statusEl = document.createElement('p');
       statusEl.className = ('search-status')
@@ -185,7 +189,7 @@ var displaySeriesdata = function(series) {
       var selfUrl = series._links.self.href;
       var res = selfUrl.split("http");
       selfUrl = 'https' + res[1];
-      // call function in localstorage.js when save button is clicked
+      // call function in localstorage.js when "Add To Favourite" button is clicked
       saveButtonEl.setAttribute('onclick', 'addFavHandlerLocalStorage("' + selfUrl + '")');
       seriesDataEl.appendChild(saveButtonEl);
     }
@@ -199,7 +203,7 @@ var displaySeriesdata = function(series) {
 
     // call function to get rating
     seriesRating(series.externals.imdb);
-  }    
+  }  
 };
 
 // Function for getting rating
@@ -224,38 +228,9 @@ var seriesRating = function(id) {
 };
 
 // Function to display rating
-/*
-var displayRating = function(rating) {
-  //if (rating.Ratings[0] != null) {
-  //if(rating.Response != "False"){
-  if(typeof(rating.Ratings[0]) != 'undefined'){
-    var ratingContainerEl = document.createElement('div');
-    ratingContainerEl.className = 'rating-container';
-    ratingContainerEl.setAttribute('id', 'rating-container');
-    resultContainerEl.appendChild(ratingContainerEl);
-
-    // display rating score
-    if(rating.Ratings[0].Value != null && ratings.Ratings[0].Source != null) {
-      var ratingEl = document.createElement('p');
-      ratingEl.className = 'rating-score';
-      ratingEl.setAttribute('id', 'rating-score');
-      ratingEl.textContent = rating.Ratings[0].Value;
-      ratingContainerEl.appendChild(ratingEl);
-      
-      // display rating source
-      var sourceEl = document.createElement('span');
-      sourceEl.className = 'rating-source';
-      sourceEl.setAttribute('id', 'rating-source');
-      sourceEl.textContent = " Source: " + rating.Ratings[0].Source;
-      ratingEl.appendChild(sourceEl);
-    }
-  }
-};
-*/
-// Function to display rating
 var displayRating = function(rating) {
   var ratingScore = 'Not available';
-  var ratingSource = 'IMDb'
+  var ratingSource = 'Internet Movie Database';
   if(rating.Response != "False"){
     ratingScore = rating.Ratings[0].Value;
     ratingSource = rating.Ratings[0].Source;
@@ -268,7 +243,7 @@ var displayRating = function(rating) {
   var ratingEl = document.createElement('p');
   ratingEl.className = 'rating-score';
   ratingEl.setAttribute('id', 'rating-score');
-  ratingEl.textContent = ratingScore;
+  ratingEl.textContent = "Rating: " + ratingScore;
   ratingContainerEl.appendChild(ratingEl);
   // display rating source
   var sourceEl = document.createElement('span');
@@ -277,7 +252,6 @@ var displayRating = function(rating) {
   sourceEl.textContent = " Source: " + ratingSource;
   ratingEl.appendChild(sourceEl);
 };
-
 
 // add event listener for search
 searchFormEl.addEventListener('submit', searchSubmitHandler);
