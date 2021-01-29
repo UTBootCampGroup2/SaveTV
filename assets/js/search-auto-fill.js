@@ -28,6 +28,7 @@ function searchShow(query) {
       //console.log('error', error);
   });
 }
+
 var resultsList = document.getElementById("resultsList");
 resultsList.onclick = function (event) {
   event.preventDefault();
@@ -38,6 +39,7 @@ resultsList.onclick = function (event) {
       getSeries(movieName);
   }
 }
+
 // lists JSON objects on HTML 
 function renderResults(movieInfoList) {
  var list = document.getElementById("resultsList");
@@ -68,7 +70,7 @@ function displayModal() {
   }
   // display default placeholder value
   searchInputEl.removeAttribute('placeholder');
-  searchInputEl.setAttribute('placeholder', 'Search for your favourite TV show');
+  searchInputEl.setAttribute('placeholder', 'Search for your favourite show');
 }
 
 let searchTimeout = 0;
