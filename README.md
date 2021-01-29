@@ -53,4 +53,8 @@ __Congradulations__
 
 (/assets/images/Screenshot 2021-01-29 163539.png)
 
+<<<<<<< HEAD
 You've just favourited your show! Now you can go see it's status at any time you want.
+=======
+You've just favourited your show! Now you can go see it's status at any time you want.
+>>>>>>> 30b5f7493a2533d8fbb276a1326859c5820de79b
