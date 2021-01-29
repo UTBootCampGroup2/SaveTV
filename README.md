@@ -39,22 +39,19 @@ Here are some of the more advanced languages used within SaveTv
 To do that you must:
 1. Search the desired Tv show.
 
-(/assets/images/Screenshot 2021-01-29 162550.png)
+[](/assets/images/Screenshot 2021-01-29 162550.png)
 
 2. Click on the Title
 
-(/assets/images/Screenshot 2021-01-29 163302.png)
+[](/assets/images/Screenshot 2021-01-29 163302.png)
 
 3. Then click "Add To Favourite"
 
-(/assets/images/Screenshot 2021-01-29 163414.png)
+[](/assets/images/Screenshot 2021-01-29 163414.png)
 
 __Congradulations__
 
-(/assets/images/Screenshot 2021-01-29 163539.png)
+[](/assets/images/Screenshot 2021-01-29 163539.png)
 
-<<<<<<< HEAD
 You've just favourited your show! Now you can go see it's status at any time you want.
-=======
-You've just favourited your show! Now you can go see it's status at any time you want.
->>>>>>> 30b5f7493a2533d8fbb276a1326859c5820de79b
+
