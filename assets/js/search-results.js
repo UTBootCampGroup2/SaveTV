@@ -51,8 +51,6 @@ var getSeries = function(seriesName) {
       } 
       else {
         console.log('Error: ' + response.statusText);
-        // remove modal display
-        modalBox.classList.remove("activeInfo");
         // display that the entered value is invalid
         searchInputEl.removeAttribute('placeholder');
         searchInputEl.setAttribute('placeholder', 'Please enter a valid TV show name');
