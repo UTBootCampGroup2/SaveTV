@@ -8,7 +8,7 @@ var localStorageObj = {};
 var localStorageName = 'group2-SaveTv-items';
 
 // get html element to print calendar:
-var localUlElement = document.querySelector("ul", "#search-history");
+var localUlElement = document.querySelector(".accordion");
 
 var localFavDiv = document.getElementById("my-favs");  
 
@@ -120,11 +120,11 @@ var localStorageCall = function(apiUrl, seriesName) {
                     window.location.reload();
                 });
             } else {
-                alert('Error: ' + response.statusText);
+                console.log('Error: ' + response.statusText);
             }
         })
     .catch(function(error) {
-        alert('Unable to connect From Local storage');
+        console.log('Unable to connect From Local storage');
     });
 }
 
@@ -188,8 +188,8 @@ var checkIfFavExists = function(favName){
         if(favName == favArr[i][0]){
             return true;
         }
-        return false;
     }
+    return false;
 }
 
 // Push to Favourtire array:
@@ -224,11 +224,11 @@ var addFavHandlerLocalStorage = function(url){
                 pushtoFavArray(data.name, data.url, data.image.medium);
             });
         } else {
-            alert('Error: ' + response.statusText);
+            console.log('Error: ' + response.statusText);
         }
     })
     .catch(function(error) {
-        alert('Unable to connect From Local storage');
+        console.log('Unable to connect From Local storage');
     });
 }
 

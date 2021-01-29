@@ -34,7 +34,7 @@ var featuredShowName5 = null;
 // function to fetch shows for the day
 var todaysShows = function () {
 
-    var apiUrl = "http://api.tvmaze.com/schedule?country=US&date=" + date;
+    var apiUrl = "https://api.tvmaze.com/schedule?country=US&date=" + date;
     fetch(apiUrl)
     .then(function(response) {
       // request was successful
@@ -145,22 +145,22 @@ var displayFeaturedShows = function(featuredShows) {
 
 // Functions for displaying details in modal
 var showDetails0 = function() {
-  displayModal(featuredShowName0);
+  getSeries(featuredShowName0);
 };
 var showDetails1 = function() {
-  displayModal(featuredShowName1);
+  getSeries(featuredShowName1);
 };
 var showDetails2 = function() {
-  displayModal(featuredShowName2);
+  getSeries(featuredShowName2);
 };
 var showDetails3 = function() {
-  displayModal(featuredShowName3);
+  getSeries(featuredShowName3);
 };
 var showDetails4 = function() {
-  displayModal(featuredShowName4);
+  getSeries(featuredShowName4);
 };
 var showDetails5 = function() {
-  displayModal(featuredShowName5);
+  getSeries(featuredShowName5);
 };
 
 // Event listeners for showing details of featured shows
