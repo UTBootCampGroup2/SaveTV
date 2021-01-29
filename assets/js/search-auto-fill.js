@@ -66,6 +66,9 @@ function displayModal() {
   exitBtn.onclick = ()=>{
     modalBox.classList.remove("activeInfo");
   }
+  // display default placeholder value
+  searchInputEl.removeAttribute('placeholder');
+  searchInputEl.setAttribute('placeholder', 'Search for your favourite TV show');
 }
 
 let searchTimeout = 0;
