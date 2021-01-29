@@ -37,21 +37,15 @@ Here are some of the more advanced languages used within SaveTv
 
 ### SaveTv most recognizable feature is to Save/Favorite your Tv Shows
 To do that you must:
-1. Search the desired Tv show.
+1. [Search the desired Tv show](/assets/images/examples1.png)
 
-[](/assets/images/Screenshot 2021-01-29 162550.png)
+2. [Click on the Title](/assets/images/examples2.png)
 
-2. Click on the Title
+3. [Then click "Add To Favourite"](/assets/images/examples3.png)
 
-[](/assets/images/Screenshot 2021-01-29 163302.png)
+#### Congradulations
 
-3. Then click "Add To Favourite"
 
-[](/assets/images/Screenshot 2021-01-29 163414.png)
 
-__Congradulations__
-
-[](/assets/images/Screenshot 2021-01-29 163539.png)
-
-You've just favourited your show! Now you can go see it's status at any time you want.
+[You've just favourited your show! Now you can go see it's status at any time you want.](/assets/images/examples4.png)
 
