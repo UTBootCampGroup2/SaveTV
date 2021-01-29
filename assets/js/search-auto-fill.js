@@ -37,11 +37,11 @@ resultsList.onclick = function (event) {
   if (target.tagName.toLowerCase() === 'img') {
       // console.log("img click test") //works
       // console.log('event', event);
-      var movieId = target.id;
+      //var movieId = target.id;
       // console.log(movieId);
       var movieName = target.name;
-      // console.log("movie name", movieName);
-      displayModal(movieName);
+      
+      getSeries(movieName);
   }
 }
 // lists JSON objects on HTML 
@@ -55,7 +55,7 @@ function renderResults(movieInfoList) {
 }
 function showImage(movieInfo) {
   // creates img
-  console.log(movieInfo);
+  //console.log(movieInfo);
   var img = document.createElement("img");
   img.id = movieInfo.movieId;
   img.name = movieInfo.movieName;
@@ -72,7 +72,7 @@ function displayModal(movieName) {
     modalBox.classList.remove("activeInfo");
     
   }
-  getSeries(movieName);
+  //getSeries(movieName);
 }
 let searchTimeout = 0;
 // automatically starts searching just from input of search bar
