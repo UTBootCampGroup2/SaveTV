@@ -1,7 +1,12 @@
 # SaveTv
 
+##### Table of Contents  
 
+1. [About SaveTv](#about-savetv)
+    - [Featured Section](#featured-section)
+    - [Built With](#built-with)
 
+2. [Section 2](#section-2)
 
 <!-- ABOUT SAVETV -->
 ## About SaveTv
