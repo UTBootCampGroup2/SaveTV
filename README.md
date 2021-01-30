@@ -68,7 +68,7 @@
   * [Fontawesome](https://fontawesome.com/)
 
 ### API
-  * [tvmaze](https://www.tvmaze.com/)
+  * [tvmaze.com](https://www.tvmaze.com/api)
   * [omdbapi.com](http://www.omdbapi.com/)
 
 ## Contributors
