@@ -68,8 +68,8 @@
   * [Fontawesome](https://fontawesome.com/)
 
 ### API
-  * [tvmaze.com](https://www.tvmaze.com/api)
-  * [omdbapi.com](http://www.omdbapi.com/)
+  * [tvmaze](https://www.tvmaze.com/api)
+  * [omdbapi](http://www.omdbapi.com/)
 
 ## Contributors
   * [BennAsabir](https://github.com/BennAsabir)
