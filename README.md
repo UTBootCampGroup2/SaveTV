@@ -33,30 +33,30 @@
 ### To Search for Information of Your Favorite Shows
 
   - Click Search on navigation bar.
-<p align="center"><img src="/assets/images/examples1.png" width="800"/></p>
+<p align="center"><img src="/assets/images/examples1.png" width="750"/></p>
 
   - Type in keywords in the search bar to search for desired Tv show.
   - Click on the title image. (10 most related results will populated underneath the search bar.)
-<p align="center"><img src="/assets/images/examples2.png" width="800"/></p>
+<p align="center"><img src="/assets/images/examples2.png" width="750"/></p>
 
 ### To Save Your Tv Shows into "My Favorites" section
 
   - After clicking on the title image. Click "Add To Favourite" in the pop up.
   - "Add to Favorite" button will only appear when the selected show is not on-going.
-<p align="center"><img src="/assets/images/examples3.png" width="800"/></p>
+<p align="center"><img src="/assets/images/examples3.png" width="750"/></p>
 
   - You've just favourited your show! Now you can go see it's status at any time you want.
-<p align="center"><img src="/assets/images/examples4.png" width="800"/></p>
+<p align="center"><img src="/assets/images/examples4.png" width="750"/></p>
 
 ### To Save Your Tv Shows into "My Watchlist" section
  
   - After clicking on the title image. Click "Add To Watch List" in the pop up.
   - "Add to Watch List" button will only appear when the selected show is currently on-going.
-<p align="center"><img src="/assets/images/examples5.png" width="800"/></p>
+<p align="center"><img src="/assets/images/examples5.png" width="750"/></p>
 
   - You've just added your show to your watchlist!
   - It displays the date in ascending order for upcoming show time. Click on the date to expand and see the exact time on air.
-<p align="center"><img src="/assets/images/examples6.png" width="800"/></p>
+<p align="center"><img src="/assets/images/examples6.png" width="750"/></p>
 
 <!-- LANGUAGES USED -->
 ## Built With
