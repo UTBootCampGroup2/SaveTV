@@ -23,11 +23,11 @@
   * save your favorite TV show into a watchlist to remind you the upcoming show time so you do not miss the next show. 
 
 <!-- FEATURED SECTION -->
-### Featured Section
-* The featured section displays Tv shows that are currently being broadcasted, as well as shows that __have__ been and __will__ be broadcasted.
-* It can also be used to set notifications to remind you what time they are scheduled to play. 
-* Use this to find out other highly rated and related shows.
-* Finally, don't forget to use our one-click composed reminder schedule to be kept up-to-date on all of your favorite shows!
+* Featured Section
+  * The featured section displays Tv shows that are currently being broadcasted, as well as shows that __have__ been and __will__ be broadcasted.
+  * It can also be used to set notifications to remind you what time they are scheduled to play. 
+  * Use this to find out other highly rated and related shows.
+  * Finally, don't forget to use our one-click composed reminder schedule to be kept up-to-date on all of your favorite shows!
 
 ## Most Recognized Features
 ### To Search for Information of Your Favorite Shows
