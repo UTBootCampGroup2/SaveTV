@@ -58,6 +58,9 @@
   - It displays the date in ascending order for upcoming show time. Click on the date to expand and see the exact time on air.
 <p align="center"><img src="/assets/images/examples6.png" width="750"/></p>
 
+## Installation
+  * To view the interface, open index.html in a web browser for the full experience of SaveTV's functionality.
+  
 <!-- LANGUAGES USED -->
 ## Built With
 ### Frameworks and Libraries
