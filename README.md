@@ -8,13 +8,14 @@
 1. [Introduction](#1-introduction)
     - [About SaveTv](#about-savetv)
     - [Features](#features)
-2. [How to Use](#2-how-to-use)
+2. [Website Screenshot](#2-website-screenshot)
+3. [How to Use](#3-how-to-use)
     - [To Search for Show Information](#to-search-for-show-information)
       - [To Save into "My Favorites"](#to-save-into-my-favorites)
       - [To Save into "My Watchlist"](#to-save-into-my-watchlist)
     - [Featured Section](#featured-section)
-3. [Installation](#3-installation)
-4. [Website Screenshot](#4-website-screenshot)
+4. [Installation](#4-installation)
+
 5. [Built With](#5-built-with)
     - [Frameworks and Libraries](#frameworks-and-libraries)
     - [API](#api)
@@ -39,7 +40,10 @@ With SaveTV, you can:
   * Intuitive one-click for adding to lists.
   * Featured shows.
 
-## 2. How to Use
+## 2. Website Screenshot
+<p align="center"><img src="/assets/images/main.png" width="750"/></p>
+
+## 3. How to Use
 ### To Search for Show Information
 
   - Click Search on navigation bar.
@@ -71,12 +75,9 @@ With SaveTV, you can:
 ### Featured Section
   - The featured section displays Tv shows that are currently being broadcasted.
   
-## 3. Installation
+## 4. Installation
   * To view the interface, open index.html in a web browser for the full experience of SaveTV's functionality.
   * [SaveTV Website](https://utbootcampgroup2.github.io/SaveTV/)
-  
-## 4. Website Screenshot
-<p align="center"><img src="/assets/images/main.png" width="750"/></p>
 
 <!-- LANGUAGES USED -->
 ## 5. Built With
