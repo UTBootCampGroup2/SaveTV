@@ -2,7 +2,7 @@
 
 <p align="center"><img src="/assets/images/logo.gif" width="400"/></p>
 
-<p align="center"><img src="/assets/images/main.png" width="750"/></p>
+
 
 ## Table of Contents
 1. [Introduction](#1-introduction)
@@ -14,10 +14,11 @@
       - [To Save into "My Watchlist"](#to-save-into-my-watchlist)
     - [Featured Section](#featured-section)
 3. [Installation](#3-installation)
-4. [Built With](#4-built-with)
+4. [Website Screenshot](#4-website-screenshot)
+5. [Built With](#5-built-with)
     - [Frameworks and Libraries](#frameworks-and-libraries)
     - [API](#api)
-5. [Contributors](#5-contributors)
+6. [Contributors](#6-contributors)
 
 <!-- ABOUT SAVETV -->
 ## 1. Introduction
@@ -74,8 +75,11 @@ With SaveTV, you can:
   * To view the interface, open index.html in a web browser for the full experience of SaveTV's functionality.
   * [SaveTV Website](https://utbootcampgroup2.github.io/SaveTV/)
   
+## 4. Website Screenshot
+<p align="center"><img src="/assets/images/main.png" width="750"/></p>
+
 <!-- LANGUAGES USED -->
-## 4. Built With
+## 5. Built With
 ### Frameworks and Libraries
   * [Foundation](https://get.foundation/)
   * [jQuery](https://jquery.com)
@@ -87,7 +91,7 @@ With SaveTV, you can:
   * [tvmaze](https://www.tvmaze.com/api)
   * [omdbapi](http://www.omdbapi.com/)
 
-## 5. Contributors
+## 6. Contributors
   * [BennAsabir](https://github.com/BennAsabir)
   * [BrianCKWang](https://github.com/BrianCKWang)
   * [Menkoi](https://github.com/Menkoi)
