@@ -25,14 +25,14 @@
 SaveTV provides a quick and easy way to search up your favorite shows, what time they are scheduled to play, find out other highly rated and related shows, and a one-click composed reminder schedule for upcoming show time.
 
 With SaveTV, you can:
-  * search and save your favorite Tv content and provides suggestions with best ratings.
-  * save ongoing TV shows into a watchlist to remind you the upcoming show time so you do not miss the next show.
-  * see the current days shows
+  * Search and save your favorite Tv content and provides suggestions with best ratings.
+  * Save ongoing TV shows into a watchlist to remind you the upcoming show time so you do not miss the next show.
+  * See the current-day shows in Featured Shows section
 
 <!-- FEATURED SECTION -->
 ### Features
   * Related suggestions from search entries.
-  * Show information including ratings, description
+  * Show information including rating, broadcast status, and description
   * Favorite list
   * Show time reminder organized in dates.
   * Intuitive one-click for adding to lists.
@@ -68,11 +68,12 @@ With SaveTV, you can:
 <p align="center"><img src="/assets/images/examples6.png" width="750"/></p>
 
 ### Featured Section
-  - The featured section displays Tv shows that are currently being broadcasted, as well as shows that __have__ been and __will__ be broadcasted.
+  - The featured section displays Tv shows that are currently being broadcasted.
   
 ## 3. Installation
   * To view the interface, open index.html in a web browser for the full experience of SaveTV's functionality.
   * [SaveTV Website](https://utbootcampgroup2.github.io/SaveTV/)
+  
 <!-- LANGUAGES USED -->
 ## 4. Built With
 ### Frameworks and Libraries
