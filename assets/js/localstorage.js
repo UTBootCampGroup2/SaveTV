@@ -14,7 +14,6 @@ var localFavDiv = document.getElementById("my-favs");
 
 // load from storage function
 var loadFromLocalStorage = function() {
-    // dateArr = JSON.parse(localStorage.getItem(localStorageName));
     // Store both arrays as object:
     
     localStoreObj = JSON.parse(localStorage.getItem(localStorageName));
@@ -30,7 +29,6 @@ var loadFromLocalStorage = function() {
         dateArray: dateArr,
         favArrray: favArr
     };
-    // console.log(localStorageObj);
 };
 
 // save to storage function
@@ -73,8 +71,6 @@ var pushToDateArray = function(date, time, series, episode, url){
             if(!checkIfExists){
                 // save object inside this array
                 dateArr[position].push(objData);
-            }else{
-                // console.log('already saved');
             }
             
         }else{
@@ -84,6 +80,7 @@ var pushToDateArray = function(date, time, series, episode, url){
     } 
 }
 
+// check if similar date exists in the array
 var checkIfDateExists = function(date){
     
     for(var i=0; i<dateArr.length; i++){
@@ -94,6 +91,7 @@ var checkIfDateExists = function(date){
     return null;
 }
 
+// check if similar episode name exists
 var checkIfEpisodeExists = function(epi, pos){
     for(var i=1; i<dateArr[pos].length; i++){
         if(dateArr[pos][i].objEpisodeName == epi){
@@ -102,10 +100,11 @@ var checkIfEpisodeExists = function(epi, pos){
     }
 }
 
+// function called from search-results.js:
 var localStorageCall = function(apiUrl, seriesName) {
     
     loadFromLocalStorage();
-
+    // fetch api and push to local storage:
     fetch(apiUrl)
         .then(function(response) {
             
@@ -149,7 +148,6 @@ var showCalendarInfo = function(){
         
         aEl.textContent = date;
         // append date li element to ul:
-        //localUlElement.appendChild(aEl);
         liDateEl.append(aEl);
 
         // show episodes details into li:
