@@ -146,8 +146,8 @@ Code Changed by Fazle:
         saveButtonEl.textContent = "Add to Watch List";
         
         // var res = nexEpisodeUrl.slice('http');
-        var res = nexEpisodeUrl.split("http");
-        nexEpisodeUrl = 'https' + res[1];
+        // var res = nexEpisodeUrl.split("http");
+        // nexEpisodeUrl = 'https' + res[1];
         // call function in localstorage.js when save button is clicked
         saveButtonEl.setAttribute('onclick', 'saveBtnHandlerLocalStorage("' + nexEpisodeUrl + '", ' + '"' + seriesName + '")');
         seriesDataEl.appendChild(saveButtonEl);
@@ -173,8 +173,8 @@ Code Changed by Fazle:
       saveButtonEl.textContent = "Add To Favourite";
       // call function in localstorage.js when save button is clicked
       var nexEpisodeUrl = series._links.self.href;
-      var res = nexEpisodeUrl.split("http");
-      nexEpisodeUrl = 'https' + res[1];
+      // var res = nexEpisodeUrl.split("http");
+      // nexEpisodeUrl = 'https' + res[1];
 
       saveButtonEl.setAttribute('onclick', 'addFavHandlerLocalStorage("' + series._links.self.href + '")');
       seriesDataEl.appendChild(saveButtonEl);
