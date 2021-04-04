@@ -1,7 +1,7 @@
 // function to fetch shows for the day
 var todaysShows = function () {
 
-    var apiUrl = "http://api.tvmaze.com/schedule?country=US&date=2021-01-24";
+    var apiUrl = "https://api.tvmaze.com/schedule?country=US&date=2021-01-24";
     fetch(apiUrl)
     .then(function(response) {
       // request was successful

@@ -1,7 +1,7 @@
 // ************************ From Brandon ************************//
 // fetching TV Maze API 
 function searchShow(query) {
-  var url = `http://api.tvmaze.com/search/shows?q=${query}`;
+  var url = `https://api.tvmaze.com/search/shows?q=${query}`;
   // console.log(url);
   fetch(url)
   // .then(response => response.json())

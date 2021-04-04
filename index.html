@@ -6,6 +6,7 @@
 <title>SaveTV</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon-32x32.png">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <!-- FOUNDATION -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
@@ -55,62 +56,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.c
 
 <!-- PAGE CONTENT -->
 <div class="w3-content w3-padding" style="max-width:1564px">      
-
-<!-- SEARCH SHOW SECTION -->
-  <section id="search-show">
-    <div class="text-center">
-      <h2>Search For Your Favourite Show</h2>
-      <hr>
-    </div>
-    <!--SEARCH BAR -->
-    <div class="hero-search-filter-content">
-      <form class="hero-search-filter-form" action="">
-        <input id="findlocate" class="hero-search-filter-form-near" type="text" />
-        <button class="button"><i class="fa fa-search"></i></button>
-      </form>
-    </div>
-
-    <!--MOVIE SEARCH CONTAINER-->
-    <div class="container">
-
-    <!--shows errors in html page-->
-    <div id="errorMessage"></div>
-          
-    <!--Displays vertical slide of movie posters-->
-    <section id="resultsList"></section>
-                
-    </div>
-          
-    <!--MODEL BOX-->
-     <div class="modal-box">
-      <!--modal exit button-->
-         <button class="quit float-right"><i class="fi-x"></i></button>
-    </div>
-
-        <!-- SEARCH HISTORY DIV -->
-
-<!--Code Changed by Fazle:  
-<div id="my-favs" class="text-center">
--->
-        <div id="my-favs" class="text-center">
-          <h2>My Favourites</h2>
-        </div>
-          <div class="row">
-            <div class="col-md-12 h-100 pb-3" id="search-history-container">
-                <div class="card w-100">
-<!-- Code Changed by Fazle:
-<ul id="search-history" class="accordion" data-accordion data-allow-all-closed="true">
--->
-                    <ul id="search-history" class="accordion" data-accordion data-allow-all-closed="true">
-                      <!-- ... -->
-                    </ul>
-                </div>
-            </div>
-          </div>
-  </section>
-
-    <br>
-    <br>
+  <br>
+  <br>
 
   <!-- CAROUSEL -->
   <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
@@ -145,9 +92,52 @@ href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.c
     </nav>
   </div>  
   
-  
+  <!-- SEARCH SHOW SECTION -->
+  <section id="search-show">
+    <div class="text-center">
+      <h2>Search For Your Favourite Show</h2>
+      <hr>
+    </div>
+    <!--SEARCH BAR -->
+    <div class="hero-search-filter-content">
+      <form class="hero-search-filter-form" action="">
+        <input id="findlocate" class="hero-search-filter-form-near" type="text" />
+        <button class="button"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
 
-</section>
+    <!--MOVIE SEARCH CONTAINER-->
+    <div class="container">
+    
+      <!--shows errors in html page-->
+      <div id="errorMessage"></div>
+            
+      <!--Displays vertical slide of movie posters-->
+      <section id="resultsList"></section>
+                
+    </div>
+          
+    <!--MODEL BOX-->
+    <div class="modal-box">
+      <!--modal exit button-->
+         <button class="quit float-right"><i class="fi-x"></i></button>
+    </div>
+
+        <!-- SEARCH HISTORY DIV -->
+
+      <div id="my-favs" class="text-center">
+        <h2>My Favourites</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-12 h-100 pb-3" id="search-history-container">
+            <div class="card w-100">
+                <ul id="search-history" class="accordion" data-accordion data-allow-all-closed="true">
+                  <!-- ... -->
+                </ul>
+            </div>
+        </div>
+      </div>
+  </section>
   
   <!-- FEATURED SHOWS -->
   <div id="featured-shows" class="text-center">
