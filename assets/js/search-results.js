@@ -63,9 +63,7 @@ var getSeries = function(seriesName) {
 
 // Function for displaying the serached series information
 var displaySeriesdata = function(series) {
-
   if(series != null){
-
     // create section for holding series data
     var seriesDataEl = document.createElement('div');
     seriesDataEl.className = 'series-data';
@@ -103,7 +101,6 @@ var displaySeriesdata = function(series) {
 
     // display schedule, savebutton and network or webchannel if show is running
     if(series.status === "Running") {
-      
       // display network or webChannel
       var networkSearchEl = document.createElement('p');
       if(series.network != null) {
@@ -132,67 +129,58 @@ var displaySeriesdata = function(series) {
           seriesDataEl.appendChild(scheduleEl);
         }
       }
-
-      // Create ""Add to Watch List" button for "running" and "next episode doesnt exist" shows
+/* 
+Code Changed by Fazle:
+*/    
+      // if series is running show 'Remind' button to add to calendar
       if (typeof(series._links.nextepisode) !== 'undefined') {
         
         var seriesName = series.name;
-        // display "Add to Watch List" save button
+        // add save button
         var saveButtonEl = document.createElement('button');
         saveButtonEl.className = 'save-button';
         saveButtonEl.setAttribute('id', 'save-button');
         saveButtonEl.setAttribute('type', 'button');
         saveButtonEl.innerHTML = "<i class='fa fa-search'></i>"
-        saveButtonEl.textContent = "Add to Watch List";
-
         var nexEpisodeUrl = series._links.nextepisode.href;
-        var res = nexEpisodeUrl.split("http");
-        nexEpisodeUrl = 'https' + res[1];
-        // call function in localstorage.js when "Add to Watch List" button is clicked
+        saveButtonEl.textContent = "Add to Watch List";
+        
+        // var res = nexEpisodeUrl.slice('http');
+        // var res = nexEpisodeUrl.split("http");
+        // nexEpisodeUrl = 'https' + res[1];
+        // call function in localstorage.js when save button is clicked
         saveButtonEl.setAttribute('onclick', 'saveBtnHandlerLocalStorage("' + nexEpisodeUrl + '", ' + '"' + seriesName + '")');
-        seriesDataEl.appendChild(saveButtonEl); 
-      }
-      // Create "Add to Fvourite" button for "Running" and "next episode exists" shows
-      else {
-        // display "Add to Favourite" save button
-        var saveButtonEl = document.createElement('button');
-        saveButtonEl.className = 'save-button';
-        saveButtonEl.setAttribute('id', 'save-button');
-        saveButtonEl.setAttribute('type', 'button');
-        saveButtonEl.innerHTML = "<i class='fa fa-search'></i>"
-        saveButtonEl.textContent = "Add To Favourite";
-
-        var selfUrl = series._links.self.href;
-        var res = selfUrl.split("http");
-        selfUrl = 'https' + res[1];
-        // call function in localstorage.js when "Add To Favourite" button is clicked
-        saveButtonEl.setAttribute('onclick', 'addFavHandlerLocalStorage("' + selfUrl + '")');
         seriesDataEl.appendChild(saveButtonEl);
       }
+       
     }
     //display status and button for "ended" shows; schedule and network is not required in this case
     else {
+      //display status if show has ended
       var statusEl = document.createElement('p');
       statusEl.className = ('search-status')
       statusEl.setAttribute("id", 'search-status');
       statusEl.textContent = "Status: " + series.status;
       seriesDataEl.appendChild(statusEl);
-
-      // display "Add to Favourite" save button
+/* 
+Code Changed by Fazle:
+*/ 
       var saveButtonEl = document.createElement('button');
       saveButtonEl.className = 'save-button';
       saveButtonEl.setAttribute('id', 'save-button');
       saveButtonEl.setAttribute('type', 'button');
       saveButtonEl.innerHTML = "<i class='fa fa-search'></i>"
       saveButtonEl.textContent = "Add To Favourite";
+      // call function in localstorage.js when save button is clicked
+      var nexEpisodeUrl = series._links.self.href;
+      // var res = nexEpisodeUrl.split("http");
+      // nexEpisodeUrl = 'https' + res[1];
 
-      var selfUrl = series._links.self.href;
-      var res = selfUrl.split("http");
-      selfUrl = 'https' + res[1];
-      // call function in localstorage.js when "Add To Favourite" button is clicked
-      saveButtonEl.setAttribute('onclick', 'addFavHandlerLocalStorage("' + selfUrl + '")');
+      saveButtonEl.setAttribute('onclick', 'addFavHandlerLocalStorage("' + series._links.self.href + '")');
       seriesDataEl.appendChild(saveButtonEl);
+
     }
+    
 
     // display summary
     var summaryEl = document.createElement('div');
